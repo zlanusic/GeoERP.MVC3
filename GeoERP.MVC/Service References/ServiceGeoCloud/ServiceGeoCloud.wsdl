@@ -1,0 +1,2438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceGeoCloud" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:element name="Test">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="vaseIme" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TestResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="TestResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnesiNovuFirmu">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="skraceniNaziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mjesto" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="adresa" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brTel" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brMob" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brFax" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail3" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="webAddrs" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="oib" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mb" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pdvBr" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="poslovnaBanka" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brZr" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="direktor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="iban" nillable="true" type="xs:string" />
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="logo" nillable="true" type="q1:Binary" />
+            <xs:element minOccurs="0" name="korisnickoIme" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="lozinka" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="tipApp" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnesiNovuFirmuResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPodatakaFirme">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idBanka" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="skraceniNaziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mjesto" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="adresa" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brTel" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brMob" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brFax" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail3" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="webAddrs" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="oib" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mb" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pdvBr" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="poslovnaBanka" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brZr" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="direktor" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="iban" nillable="true" type="xs:string" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="logo" nillable="true" type="q2:Binary" />
+            <xs:element minOccurs="0" name="korisnickoIme" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="lozinka" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="tipApp" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPodatakaFirmeResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiFirmu">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiFirmuResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiFirmuResult" nillable="true" type="q3:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiBanke">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiBankeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiBankeResult" nillable="true" type="q4:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodajBanku">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="iban" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="zr" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodajBankuResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPodatakaBanke">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idBanka" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="iban" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="zr" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPodatakaBankeResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiBanku">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idBanka" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiBankuResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiPoslove">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiPosloveResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiPosloveResult" nillable="true" type="q5:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviPosao">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idUser" type="xs:int" />
+            <xs:element minOccurs="0" name="redniBroj" type="xs:int" />
+            <xs:element minOccurs="0" name="urBroj" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="opis" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="status" type="xs:int" />
+            <xs:element minOccurs="0" name="olovka" type="xs:int" />
+            <xs:element minOccurs="0" name="idVrstaPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="idStranke" type="xs:int" />
+            <xs:element minOccurs="0" name="datumStart" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="datumEnd" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="datumOlovka" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviPosaoResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idPosao" type="xs:int" />
+            <xs:element minOccurs="0" name="idUser" type="xs:int" />
+            <xs:element minOccurs="0" name="redniBroj" type="xs:int" />
+            <xs:element minOccurs="0" name="urBroj" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="opis" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="status" type="xs:int" />
+            <xs:element minOccurs="0" name="olovka" type="xs:int" />
+            <xs:element minOccurs="0" name="idVrstaPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="idStranke" type="xs:int" />
+            <xs:element minOccurs="0" name="datumStart" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="datumEnd" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="datumOlovka" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPoslaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiPosao">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idPosla" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiPosaoResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaStatusaPosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="statusPosla" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaStatusaPoslaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodijeliPosao">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="idGrupe" type="xs:int" />
+            <xs:element minOccurs="0" name="idRadnik" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodijeliPosaoResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaDodijeljenogPosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idDp" type="xs:int" />
+            <xs:element minOccurs="0" name="idGrupe" type="xs:int" />
+            <xs:element minOccurs="0" name="idRadnik" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaDodijeljenogPoslaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiZadnjiPosao">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiZadnjiPosaoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DohvatiZadnjiPosaoResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiZadnjiRedniBrojOdPoslaFirma">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiZadnjiRedniBrojOdPoslaFirmaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DohvatiZadnjiRedniBrojOdPoslaFirmaResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiGrupe">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiGrupeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiGrupeResult" nillable="true" type="q6:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaGrupa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="opis" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaGrupaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPodatakaGrupe">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idGrupe" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="opis" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPodatakaGrupeResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrišiGrupu">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idGrupe" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrišiGrupuResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiRadnike">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiRadnikeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiRadnikeResult" nillable="true" type="q7:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviRadnik">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="ime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="prezime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="oib" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mjesto" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="adresa" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brMob" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brTel" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="korisnickoIme" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="lozinka" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idOvlast" type="xs:int" />
+            <xs:element minOccurs="0" name="urBroj" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviRadnikResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPodatakaRadnika">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idRadnika" type="xs:int" />
+            <xs:element minOccurs="0" name="ime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="prezime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="oib" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mjesto" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="adresa" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brMob" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brTel" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="korisnickoIme" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="lozinka" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idOvlast" type="xs:int" />
+            <xs:element minOccurs="0" name="urBroj" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPodatakaRadnikaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrišiRadnika">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idRadnika" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrišiRadnikaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiVrstePosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiVrstePoslaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiVrstePoslaResult" nillable="true" type="q8:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaVrstaPosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="opis" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaVrstaPoslaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaVrstaPosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idVrstaPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="opis" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaVrstaPoslaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiVrstaPosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idVrstaPosla" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiVrstaPoslaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiMetaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiMetaResult" nillable="true" type="q9:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idTipMoguciMeta" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviMetaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idMeta" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idTipMoguciMeta" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaMetaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idMeta" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiMetaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiTipoveMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiTipoveMetaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiTipoveMetaResult" nillable="true" type="q10:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviTipMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ovlast" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviTipMetaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaTipaMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idTipMeta" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ovlast" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaTipaMetaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiTipMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idTipMeta" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiTipMetaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiVrijednostMoguciMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiVrijednostMoguciMetaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiVrijednostMoguciMetaResult" nillable="true" type="q11:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaVrijednostTipMoguciMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idMm" type="xs:int" />
+            <xs:element minOccurs="0" name="vrijednost" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaVrijednostTipMoguciMetaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaVrijednostiTipaMoguciMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idTipMeta" type="xs:int" />
+            <xs:element minOccurs="0" name="idMm" type="xs:int" />
+            <xs:element minOccurs="0" name="vrijednost" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaVrijednostiTipaMoguciMetaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiVrijednostTipMoguciMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idTipMeta" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiVrijednostTipMoguciMetaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodijeliMetaVrstiPosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idVrstaPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="idMeta" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodijeliMetaVrstiPoslaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiMetaVrstiPosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idPme" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiMetaVrstiPoslaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnesiVrijednostiMetaZaPosao">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idPosao" type="xs:int" />
+            <xs:element minOccurs="0" name="idMeta" type="xs:int" />
+            <xs:element minOccurs="0" name="vrijednostMeta" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnesiVrijednostiMetaZaPosaoResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiVrijednostiMetaZaPosao">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idPosao" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiVrijednostiMetaZaPosaoResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiStranke">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiStrankeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiStrankeResult" nillable="true" type="q12:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodajStranku">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="skraceniNaziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mjesto" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="adresa" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brTel" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brMob" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="brFax" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail1" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail2" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="eMail3" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="webAdrs" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="oib" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pdv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="kontakt" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="banka" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="zrBanke" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idDjelatnost" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodajStrankuResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiStranku">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idStranke" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiStrankuResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiDjelatnosti">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiDjelatnostiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiDjelatnostiResult" nillable="true" type="q13:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaDjelatnost">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaDjelatnostResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaDjelatnosti">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idDjelatnost" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaDjelatnostiResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiPonude">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiPonudeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiPonudeResult" nillable="true" type="q14:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaPonuda">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirmas" type="xs:int" />
+            <xs:element minOccurs="0" name="brPonude" type="xs:int" />
+            <xs:element minOccurs="0" name="idBanke" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idStranka" type="xs:int" />
+            <xs:element minOccurs="0" name="idVrstaPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="pdv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ukupanIznos" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="rabatPonude" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datum" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaPonudaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPonuda">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirmas" type="xs:int" />
+            <xs:element minOccurs="0" name="idPonuda" type="xs:int" />
+            <xs:element minOccurs="0" name="brPonude" type="xs:int" />
+            <xs:element minOccurs="0" name="idBanke" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idStranka" type="xs:int" />
+            <xs:element minOccurs="0" name="idVrstaPosla" type="xs:int" />
+            <xs:element minOccurs="0" name="pdv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ukupanIznos" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="rabatPonude" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datum" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPonudaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiPonudu">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idPonuda" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiPonuduResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiStavke">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiStavkeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiStavkeResult" nillable="true" type="q15:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaStavka">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idPorez" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="opis" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="iznosStavke" type="xs:decimal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NovaStavkaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaStavka">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idStavke" type="xs:int" />
+            <xs:element minOccurs="0" name="idPorez" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="opis" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="iznosStavke" type="xs:decimal" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaStavkaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiStavku">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idStavke" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiStavkuResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnosStavkiPonudeIliRacuna">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idPosao" type="xs:int" />
+            <xs:element minOccurs="0" name="idStranke" type="xs:int" />
+            <xs:element minOccurs="0" name="brRacuna" type="xs:int" />
+            <xs:element minOccurs="0" name="brPonuda" type="xs:int" />
+            <xs:element minOccurs="0" name="idStavkaRacuna" type="xs:int" />
+            <xs:element minOccurs="0" name="nazivStavke" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="cijena" type="xs:decimal" />
+            <xs:element minOccurs="0" name="iznos" type="xs:decimal" />
+            <xs:element minOccurs="0" name="kolicina" type="xs:int" />
+            <xs:element minOccurs="0" name="rabat" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UnosStavkiPonudeIliRacunaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BrisanjeStavkiPonude">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="brPonuda" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BrisanjeStavkiPonudeResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BrisanjeStavkiRacuna">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="brRacuna" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="BrisanjeStavkiRacunaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiPoreze">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiPorezeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiPorezeResult" nillable="true" type="q16:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviPorez">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="porez" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NoviPorezResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPoreza">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idPorez" type="xs:int" />
+            <xs:element minOccurs="0" name="porez" type="xs:long" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaPorezaResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiPorez">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idPorez" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiPorezResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.Data.Linq" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Binary">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bytes" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Binary" nillable="true" type="tns:Binary" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceGeoCloud_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_UnesiNovuFirmu_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiNovuFirmu" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_UnesiNovuFirmu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiNovuFirmuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPodatakaFirme_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPodatakaFirme" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPodatakaFirme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPodatakaFirmeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiFirmu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiFirmu" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiFirmu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiFirmuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiBanke_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiBanke" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiBanke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiBankeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodajBanku_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajBanku" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodajBanku_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajBankuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPodatakaBanke_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPodatakaBanke" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPodatakaBanke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPodatakaBankeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiBanku_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiBanku" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiBanku_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiBankuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiPoslove_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiPoslove" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiPoslove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiPosloveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviPosao_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoviPosao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviPosao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoviPosaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiPosao_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPosao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiPosao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPosaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaStatusaPosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaStatusaPosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaStatusaPosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaStatusaPoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodijeliPosao_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodijeliPosao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodijeliPosao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodijeliPosaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaDodijeljenogPosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaDodijeljenogPosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaDodijeljenogPosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaDodijeljenogPoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiZadnjiPosao_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiZadnjiPosao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiZadnjiPosao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiZadnjiPosaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiZadnjiRedniBrojOdPoslaFirma_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiZadnjiRedniBrojOdPoslaFirma" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiZadnjiRedniBrojOdPoslaFirma_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiZadnjiRedniBrojOdPoslaFirmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiGrupe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupe" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiGrupe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaGrupa_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaGrupa" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaGrupa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaGrupaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPodatakaGrupe_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPodatakaGrupe" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPodatakaGrupe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPodatakaGrupeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrišiGrupu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrišiGrupu" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrišiGrupu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrišiGrupuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiRadnike_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiRadnike" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiRadnike_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiRadnikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviRadnik_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoviRadnik" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviRadnik_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoviRadnikResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPodatakaRadnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPodatakaRadnika" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPodatakaRadnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPodatakaRadnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrišiRadnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrišiRadnika" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrišiRadnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrišiRadnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrstePosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrstePosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrstePosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrstePoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaVrstaPosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaVrstaPosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaVrstaPosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaVrstaPoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaVrstaPosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaVrstaPosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaVrstaPosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaVrstaPoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiVrstaPosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiVrstaPosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiVrstaPosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiVrstaPoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoviMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoviMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiTipoveMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiTipoveMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiTipoveMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiTipoveMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviTipMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoviTipMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviTipMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoviTipMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaTipaMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaTipaMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaTipaMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaTipaMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiTipMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiTipMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiTipMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiTipMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrijednostMoguciMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrijednostMoguciMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrijednostMoguciMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrijednostMoguciMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaVrijednostTipMoguciMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaVrijednostTipMoguciMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaVrijednostTipMoguciMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaVrijednostTipMoguciMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaVrijednostiTipaMoguciMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaVrijednostiTipaMoguciMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaVrijednostiTipaMoguciMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaVrijednostiTipaMoguciMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiVrijednostTipMoguciMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiVrijednostTipMoguciMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiVrijednostTipMoguciMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiVrijednostTipMoguciMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodijeliMetaVrstiPosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodijeliMetaVrstiPosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodijeliMetaVrstiPosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodijeliMetaVrstiPoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiMetaVrstiPosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiMetaVrstiPosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiMetaVrstiPosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiMetaVrstiPoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_UnesiVrijednostiMetaZaPosao_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiVrijednostiMetaZaPosao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_UnesiVrijednostiMetaZaPosao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiVrijednostiMetaZaPosaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiVrijednostiMetaZaPosao_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiVrijednostiMetaZaPosao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiVrijednostiMetaZaPosao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiVrijednostiMetaZaPosaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiStranke_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiStranke" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiStranke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiStrankeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodajStranku_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajStranku" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodajStranku_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajStrankuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiStranku_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiStranku" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiStranku_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiStrankuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiDjelatnosti_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiDjelatnosti" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiDjelatnosti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiDjelatnostiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaDjelatnost_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaDjelatnost" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaDjelatnost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaDjelatnostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaDjelatnosti_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaDjelatnosti" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaDjelatnosti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaDjelatnostiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiPonude_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiPonude" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiPonude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiPonudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaPonuda_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaPonuda" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaPonuda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaPonudaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPonuda_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPonuda" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPonuda_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPonudaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiPonudu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPonudu" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiPonudu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPonuduResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiStavke_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiStavke" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiStavke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiStavkeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaStavka_InputMessage">
+    <wsdl:part name="parameters" element="tns:NovaStavka" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NovaStavka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NovaStavkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaStavka_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaStavka" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaStavka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaStavkaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiStavku_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiStavku" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiStavku_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiStavkuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_UnosStavkiPonudeIliRacuna_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnosStavkiPonudeIliRacuna" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_UnosStavkiPonudeIliRacuna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnosStavkiPonudeIliRacunaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_BrisanjeStavkiPonude_InputMessage">
+    <wsdl:part name="parameters" element="tns:BrisanjeStavkiPonude" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_BrisanjeStavkiPonude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BrisanjeStavkiPonudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_BrisanjeStavkiRacuna_InputMessage">
+    <wsdl:part name="parameters" element="tns:BrisanjeStavkiRacuna" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_BrisanjeStavkiRacuna_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BrisanjeStavkiRacunaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiPoreze_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiPoreze" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiPoreze_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiPorezeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviPorez_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoviPorez" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_NoviPorez_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoviPorezResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPoreza_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPoreza" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaPoreza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaPorezaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiPorez_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPorez" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiPorez_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiPorezResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceGeoCloud">
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/Test" message="tns:IServiceGeoCloud_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/TestResponse" message="tns:IServiceGeoCloud_Test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnesiNovuFirmu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/UnesiNovuFirmu" message="tns:IServiceGeoCloud_UnesiNovuFirmu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/UnesiNovuFirmuResponse" message="tns:IServiceGeoCloud_UnesiNovuFirmu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPodatakaFirme">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaFirme" message="tns:IServiceGeoCloud_IzmjenaPodatakaFirme_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaFirmeResponse" message="tns:IServiceGeoCloud_IzmjenaPodatakaFirme_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiFirmu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiFirmu" message="tns:IServiceGeoCloud_DohvatiFirmu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiFirmuResponse" message="tns:IServiceGeoCloud_DohvatiFirmu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiBanke">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiBanke" message="tns:IServiceGeoCloud_DohvatiBanke_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiBankeResponse" message="tns:IServiceGeoCloud_DohvatiBanke_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajBanku">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodajBanku" message="tns:IServiceGeoCloud_DodajBanku_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodajBankuResponse" message="tns:IServiceGeoCloud_DodajBanku_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPodatakaBanke">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaBanke" message="tns:IServiceGeoCloud_IzmjenaPodatakaBanke_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaBankeResponse" message="tns:IServiceGeoCloud_IzmjenaPodatakaBanke_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiBanku">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiBanku" message="tns:IServiceGeoCloud_ObrisiBanku_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiBankuResponse" message="tns:IServiceGeoCloud_ObrisiBanku_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiPoslove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiPoslove" message="tns:IServiceGeoCloud_DohvatiPoslove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiPosloveResponse" message="tns:IServiceGeoCloud_DohvatiPoslove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoviPosao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviPosao" message="tns:IServiceGeoCloud_NoviPosao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviPosaoResponse" message="tns:IServiceGeoCloud_NoviPosao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPosla" message="tns:IServiceGeoCloud_IzmjenaPosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPoslaResponse" message="tns:IServiceGeoCloud_IzmjenaPosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPosao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiPosao" message="tns:IServiceGeoCloud_ObrisiPosao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiPosaoResponse" message="tns:IServiceGeoCloud_ObrisiPosao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaStatusaPosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaStatusaPosla" message="tns:IServiceGeoCloud_IzmjenaStatusaPosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaStatusaPoslaResponse" message="tns:IServiceGeoCloud_IzmjenaStatusaPosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodijeliPosao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodijeliPosao" message="tns:IServiceGeoCloud_DodijeliPosao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodijeliPosaoResponse" message="tns:IServiceGeoCloud_DodijeliPosao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaDodijeljenogPosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaDodijeljenogPosla" message="tns:IServiceGeoCloud_IzmjenaDodijeljenogPosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaDodijeljenogPoslaResponse" message="tns:IServiceGeoCloud_IzmjenaDodijeljenogPosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiZadnjiPosao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiPosao" message="tns:IServiceGeoCloud_DohvatiZadnjiPosao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiPosaoResponse" message="tns:IServiceGeoCloud_DohvatiZadnjiPosao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiZadnjiRedniBrojOdPoslaFirma">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiRedniBrojOdPoslaFirma" message="tns:IServiceGeoCloud_DohvatiZadnjiRedniBrojOdPoslaFirma_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiRedniBrojOdPoslaFirmaResponse" message="tns:IServiceGeoCloud_DohvatiZadnjiRedniBrojOdPoslaFirma_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupe" message="tns:IServiceGeoCloud_DohvatiGrupe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeResponse" message="tns:IServiceGeoCloud_DohvatiGrupe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovaGrupa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaGrupa" message="tns:IServiceGeoCloud_NovaGrupa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaGrupaResponse" message="tns:IServiceGeoCloud_NovaGrupa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPodatakaGrupe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaGrupe" message="tns:IServiceGeoCloud_IzmjenaPodatakaGrupe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaGrupeResponse" message="tns:IServiceGeoCloud_IzmjenaPodatakaGrupe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrišiGrupu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrišiGrupu" message="tns:IServiceGeoCloud_ObrišiGrupu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrišiGrupuResponse" message="tns:IServiceGeoCloud_ObrišiGrupu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiRadnike">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiRadnike" message="tns:IServiceGeoCloud_DohvatiRadnike_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiRadnikeResponse" message="tns:IServiceGeoCloud_DohvatiRadnike_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoviRadnik">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviRadnik" message="tns:IServiceGeoCloud_NoviRadnik_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviRadnikResponse" message="tns:IServiceGeoCloud_NoviRadnik_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPodatakaRadnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaRadnika" message="tns:IServiceGeoCloud_IzmjenaPodatakaRadnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaRadnikaResponse" message="tns:IServiceGeoCloud_IzmjenaPodatakaRadnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrišiRadnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrišiRadnika" message="tns:IServiceGeoCloud_ObrišiRadnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrišiRadnikaResponse" message="tns:IServiceGeoCloud_ObrišiRadnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiVrstePosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePosla" message="tns:IServiceGeoCloud_DohvatiVrstePosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePoslaResponse" message="tns:IServiceGeoCloud_DohvatiVrstePosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovaVrstaPosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaVrstaPosla" message="tns:IServiceGeoCloud_NovaVrstaPosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaVrstaPoslaResponse" message="tns:IServiceGeoCloud_NovaVrstaPosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaVrstaPosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaVrstaPosla" message="tns:IServiceGeoCloud_IzmjenaVrstaPosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaVrstaPoslaResponse" message="tns:IServiceGeoCloud_IzmjenaVrstaPosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiVrstaPosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrstaPosla" message="tns:IServiceGeoCloud_ObrisiVrstaPosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrstaPoslaResponse" message="tns:IServiceGeoCloud_ObrisiVrstaPosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiMeta" message="tns:IServiceGeoCloud_DohvatiMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiMetaResponse" message="tns:IServiceGeoCloud_DohvatiMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoviMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviMeta" message="tns:IServiceGeoCloud_NoviMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviMetaResponse" message="tns:IServiceGeoCloud_NoviMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaMeta" message="tns:IServiceGeoCloud_IzmjenaMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaMetaResponse" message="tns:IServiceGeoCloud_IzmjenaMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiMeta" message="tns:IServiceGeoCloud_ObrisiMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiMetaResponse" message="tns:IServiceGeoCloud_ObrisiMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiTipoveMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiTipoveMeta" message="tns:IServiceGeoCloud_DohvatiTipoveMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiTipoveMetaResponse" message="tns:IServiceGeoCloud_DohvatiTipoveMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoviTipMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviTipMeta" message="tns:IServiceGeoCloud_NoviTipMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviTipMetaResponse" message="tns:IServiceGeoCloud_NoviTipMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaTipaMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaTipaMeta" message="tns:IServiceGeoCloud_IzmjenaTipaMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaTipaMetaResponse" message="tns:IServiceGeoCloud_IzmjenaTipaMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiTipMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiTipMeta" message="tns:IServiceGeoCloud_ObrisiTipMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiTipMetaResponse" message="tns:IServiceGeoCloud_ObrisiTipMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiVrijednostMoguciMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMoguciMeta" message="tns:IServiceGeoCloud_DohvatiVrijednostMoguciMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMoguciMetaResponse" message="tns:IServiceGeoCloud_DohvatiVrijednostMoguciMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovaVrijednostTipMoguciMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaVrijednostTipMoguciMeta" message="tns:IServiceGeoCloud_NovaVrijednostTipMoguciMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaVrijednostTipMoguciMetaResponse" message="tns:IServiceGeoCloud_NovaVrijednostTipMoguciMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaVrijednostiTipaMoguciMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaVrijednostiTipaMoguciMeta" message="tns:IServiceGeoCloud_IzmjenaVrijednostiTipaMoguciMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaVrijednostiTipaMoguciMetaResponse" message="tns:IServiceGeoCloud_IzmjenaVrijednostiTipaMoguciMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiVrijednostTipMoguciMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostTipMoguciMeta" message="tns:IServiceGeoCloud_ObrisiVrijednostTipMoguciMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostTipMoguciMetaResponse" message="tns:IServiceGeoCloud_ObrisiVrijednostTipMoguciMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodijeliMetaVrstiPosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodijeliMetaVrstiPosla" message="tns:IServiceGeoCloud_DodijeliMetaVrstiPosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodijeliMetaVrstiPoslaResponse" message="tns:IServiceGeoCloud_DodijeliMetaVrstiPosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiMetaVrstiPosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiMetaVrstiPosla" message="tns:IServiceGeoCloud_ObrisiMetaVrstiPosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiMetaVrstiPoslaResponse" message="tns:IServiceGeoCloud_ObrisiMetaVrstiPosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnesiVrijednostiMetaZaPosao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/UnesiVrijednostiMetaZaPosao" message="tns:IServiceGeoCloud_UnesiVrijednostiMetaZaPosao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/UnesiVrijednostiMetaZaPosaoResponse" message="tns:IServiceGeoCloud_UnesiVrijednostiMetaZaPosao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiVrijednostiMetaZaPosao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostiMetaZaPosao" message="tns:IServiceGeoCloud_ObrisiVrijednostiMetaZaPosao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostiMetaZaPosaoResponse" message="tns:IServiceGeoCloud_ObrisiVrijednostiMetaZaPosao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiStranke">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiStranke" message="tns:IServiceGeoCloud_DohvatiStranke_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiStrankeResponse" message="tns:IServiceGeoCloud_DohvatiStranke_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajStranku">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodajStranku" message="tns:IServiceGeoCloud_DodajStranku_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodajStrankuResponse" message="tns:IServiceGeoCloud_DodajStranku_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiStranku">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiStranku" message="tns:IServiceGeoCloud_ObrisiStranku_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiStrankuResponse" message="tns:IServiceGeoCloud_ObrisiStranku_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiDjelatnosti">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiDjelatnosti" message="tns:IServiceGeoCloud_DohvatiDjelatnosti_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiDjelatnostiResponse" message="tns:IServiceGeoCloud_DohvatiDjelatnosti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovaDjelatnost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaDjelatnost" message="tns:IServiceGeoCloud_NovaDjelatnost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaDjelatnostResponse" message="tns:IServiceGeoCloud_NovaDjelatnost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaDjelatnosti">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaDjelatnosti" message="tns:IServiceGeoCloud_IzmjenaDjelatnosti_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaDjelatnostiResponse" message="tns:IServiceGeoCloud_IzmjenaDjelatnosti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiPonude">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiPonude" message="tns:IServiceGeoCloud_DohvatiPonude_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiPonudeResponse" message="tns:IServiceGeoCloud_DohvatiPonude_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovaPonuda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaPonuda" message="tns:IServiceGeoCloud_NovaPonuda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaPonudaResponse" message="tns:IServiceGeoCloud_NovaPonuda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPonuda">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPonuda" message="tns:IServiceGeoCloud_IzmjenaPonuda_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPonudaResponse" message="tns:IServiceGeoCloud_IzmjenaPonuda_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPonudu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiPonudu" message="tns:IServiceGeoCloud_ObrisiPonudu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiPonuduResponse" message="tns:IServiceGeoCloud_ObrisiPonudu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiStavke">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiStavke" message="tns:IServiceGeoCloud_DohvatiStavke_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiStavkeResponse" message="tns:IServiceGeoCloud_DohvatiStavke_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NovaStavka">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaStavka" message="tns:IServiceGeoCloud_NovaStavka_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaStavkaResponse" message="tns:IServiceGeoCloud_NovaStavka_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaStavka">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaStavka" message="tns:IServiceGeoCloud_IzmjenaStavka_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaStavkaResponse" message="tns:IServiceGeoCloud_IzmjenaStavka_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiStavku">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiStavku" message="tns:IServiceGeoCloud_ObrisiStavku_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiStavkuResponse" message="tns:IServiceGeoCloud_ObrisiStavku_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnosStavkiPonudeIliRacuna">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/UnosStavkiPonudeIliRacuna" message="tns:IServiceGeoCloud_UnosStavkiPonudeIliRacuna_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/UnosStavkiPonudeIliRacunaResponse" message="tns:IServiceGeoCloud_UnosStavkiPonudeIliRacuna_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BrisanjeStavkiPonude">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/BrisanjeStavkiPonude" message="tns:IServiceGeoCloud_BrisanjeStavkiPonude_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/BrisanjeStavkiPonudeResponse" message="tns:IServiceGeoCloud_BrisanjeStavkiPonude_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BrisanjeStavkiRacuna">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/BrisanjeStavkiRacuna" message="tns:IServiceGeoCloud_BrisanjeStavkiRacuna_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/BrisanjeStavkiRacunaResponse" message="tns:IServiceGeoCloud_BrisanjeStavkiRacuna_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiPoreze">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiPoreze" message="tns:IServiceGeoCloud_DohvatiPoreze_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiPorezeResponse" message="tns:IServiceGeoCloud_DohvatiPoreze_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoviPorez">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviPorez" message="tns:IServiceGeoCloud_NoviPorez_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviPorezResponse" message="tns:IServiceGeoCloud_NoviPorez_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPoreza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPoreza" message="tns:IServiceGeoCloud_IzmjenaPoreza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaPorezaResponse" message="tns:IServiceGeoCloud_IzmjenaPoreza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPorez">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiPorez" message="tns:IServiceGeoCloud_ObrisiPorez_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiPorezResponse" message="tns:IServiceGeoCloud_ObrisiPorez_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceGeoCloud" type="tns:IServiceGeoCloud">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnesiNovuFirmu">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/UnesiNovuFirmu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPodatakaFirme">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaFirme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiFirmu">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiFirmu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiBanke">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiBanke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajBanku">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DodajBanku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPodatakaBanke">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaBanke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiBanku">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiBanku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiPoslove">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiPoslove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoviPosao">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NoviPosao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaPosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPosao">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiPosao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaStatusaPosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaStatusaPosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodijeliPosao">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DodijeliPosao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaDodijeljenogPosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaDodijeljenogPosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiZadnjiPosao">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiPosao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiZadnjiRedniBrojOdPoslaFirma">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiRedniBrojOdPoslaFirma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupe">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiGrupe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovaGrupa">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NovaGrupa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPodatakaGrupe">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaGrupe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrišiGrupu">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrišiGrupu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiRadnike">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiRadnike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoviRadnik">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NoviRadnik" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPodatakaRadnika">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaPodatakaRadnika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrišiRadnika">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrišiRadnika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiVrstePosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovaVrstaPosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NovaVrstaPosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaVrstaPosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaVrstaPosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiVrstaPosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiVrstaPosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoviMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NoviMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiTipoveMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiTipoveMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoviTipMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NoviTipMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaTipaMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaTipaMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiTipMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiTipMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiVrijednostMoguciMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMoguciMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovaVrijednostTipMoguciMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NovaVrijednostTipMoguciMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaVrijednostiTipaMoguciMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaVrijednostiTipaMoguciMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiVrijednostTipMoguciMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostTipMoguciMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodijeliMetaVrstiPosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DodijeliMetaVrstiPosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiMetaVrstiPosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiMetaVrstiPosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnesiVrijednostiMetaZaPosao">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/UnesiVrijednostiMetaZaPosao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiVrijednostiMetaZaPosao">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostiMetaZaPosao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiStranke">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiStranke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStranku">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DodajStranku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiStranku">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiStranku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiDjelatnosti">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiDjelatnosti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovaDjelatnost">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NovaDjelatnost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaDjelatnosti">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaDjelatnosti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiPonude">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiPonude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovaPonuda">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NovaPonuda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPonuda">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaPonuda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPonudu">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiPonudu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiStavke">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiStavke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NovaStavka">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NovaStavka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaStavka">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaStavka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiStavku">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiStavku" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnosStavkiPonudeIliRacuna">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/UnosStavkiPonudeIliRacuna" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BrisanjeStavkiPonude">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/BrisanjeStavkiPonude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BrisanjeStavkiRacuna">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/BrisanjeStavkiRacuna" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiPoreze">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiPoreze" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoviPorez">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NoviPorez" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaPoreza">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaPoreza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiPorez">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiPorez" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceGeoCloud">
+    <wsdl:port name="BasicHttpBinding_IServiceGeoCloud" binding="tns:BasicHttpBinding_IServiceGeoCloud">
+      <soap:address location="http://74.208.45.202:8084/test/ServiceGeoCloud.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

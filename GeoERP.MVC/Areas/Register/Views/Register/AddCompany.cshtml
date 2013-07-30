@@ -1,0 +1,385 @@
+﻿@model GeoERP.MVC.Areas.Register.Models.RegisterCompanyViewModel
+@{
+    ViewBag.Title = "Registriraj tvrtku";
+}
+
+<h2>Pristupna forma za registraciju Vaše tvrtke</h2>
+
+<div>
+    <div class="k-panel">
+        
+        <h4 style="color: red">ASP.NET look & feel</h4>
+        
+        <h5>Unesite pristupne podatke</h5>
+        
+        @using (Html.BeginForm("AddCompany", "Register", FormMethod.Post))
+        {
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CustomerId)
+            </div>
+            
+            <div class="display-field">
+                @Html.DisplayFor(model => model.CustomerId)
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.FullName)<br />
+            </div> 
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.FullName, new { @class = "text-box" })<br />
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ShortName)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.ShortName, new { @class = "text-box" })<br />
+            </div>
+                
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CityName)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.CityName, new { @class = "text-box" })<br />
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Address)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Address, new { @class = "text-box" })<br />
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Director)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Director, new { @class = "text-box" })<br />
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.BankViewModel)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.Kendo().DropDownListFor(model => model.BankViewModel)
+                <input type="submit" name="addBank" disabled="disabled" value="Nova banka" class="k-button" /><br />
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Oib)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Oib, new { @class = "text-box" })<br />
+            </div>
+                
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PdvNum)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.PdvNum, new { @class = "text-box" })<br />
+            </div>
+                
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PersonalNumber)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.PersonalNumber, new { @class = "text-box" })<br />
+            </div>
+                
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Phone)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Phone, new { @class = "text-box" })<br />
+            </div>
+                
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Mobile)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Mobile, new { @class = "text-box" })<br />
+            </div>
+                
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Fax)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Fax, new { @class = "text-box" })<br />
+            </div>
+                
+            <div class="editor-label">
+                @Html.LabelFor(model => model.WebPath)<br />
+            </div>
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.WebPath, new { @class = "text-box" })
+                <input type="submit" disabled="disabled" value="Pretraži" class="k-button" /><br />
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email1)<br />
+            </div> 
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Email1, new { @class = "text-box" })<br />
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email2)<br />
+            </div> 
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Email2, new { @class = "text-box" })<br />
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email3)<br />
+            </div> 
+            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Email3, new { @class = "text-box" })<br />
+            </div>
+            
+            <!-- Upload -->
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PictureViewModel)<br />
+            </div>
+            <div class="editor-field">
+                @(Html.Kendo().Upload()
+                      .Name("attachments")
+                      .Async(async => async
+                                          .Save("UploadImage", "Company") // --action metoda, kontroler 
+                                          .Remove("DeleteImage", "Company") // --action metoda, kontroler
+                                          .AutoUpload(true)).Events(events => events
+                                                                                  .Select("onSelect") // --javascript fja
+                                                                                  .Success("onSuccess")) // --javascript fja
+                      )<br />
+            </div>
+                
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserName)<br />
+            </div>                            
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.UserName, new { @class = "text-box" })<br />
+            </div>
+                
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserPwd)<br />
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.UserPwd, new { @class = "text-box" })<br />
+                <br />
+            </div>
+                
+                
+            <div class="k-edit-buttons">
+                <input type="submit" value="Registriraj" class="k-button" />&nbsp;
+                <input type="submit" value="Odustani" class="k-button" onclick="window.location='/register/register/index';return false;" />&nbsp;
+                <input type="reset" value="Poništi" class="k-button" />
+            </div>
+        }
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <!-- KednoUI verzija -->
+    <h4 style="color: red"> Kendo UI look & feel </h4>
+
+    @using (Html.BeginForm("AddCompany", "Register", FormMethod.Post))
+    {
+        <label class="k-label-top" id="lblFullName" for="txtFullName">
+            Puni naziv tvrtke:
+        </label>
+        <br />
+        <input type="text" name="fullName" class="k-textbox" id="txtFullName" /><br />
+        <label class="k-label" id="lblShortName" for="txtShortName">
+            Skraceni naziv tvrtke:
+        </label>
+        <br />
+        <input type="text" name="shortName" class="k-textbox" id="txtShortName" /><br />
+        <label class="k-label" id="lblPlace" for="ddlPlace">
+            Naziv mjesta:
+        </label>
+        <br />
+        <input type="text" name="cityName" class="k-autocomplete" id="ddlPlace" /><br />
+        <label class="k-label" id="lblAddress" for="txtAddress">
+            Adresa:
+        </label>
+        <br />
+        <input type="text" name="addressName" class="k-textbox" id="txtAddress" /><br />
+    
+        <div id="info">
+            <section class="k-panel">
+                
+                <h5>Informacije</h5>
+                
+                <label class="k-label" id="lblDirector">
+                    Direktor:
+                </label>
+                <br />
+                <input type="text" name="directorName" class="k-textbox" id="txtDirector" /><br />
+                <label class="k-label" id="lblbank">
+                    Izaberite banku:
+                </label>
+                <br />
+                @(Html.Kendo().DropDownList()
+                          .Name("ddlBank")
+
+               )
+                <input type="submit" name="newBank" value="Dodaj novu banku" class="k-button" /><br />
+                <label class="k-label-top" id="lblOIB">
+                    OIB tvrtke:
+                </label>
+                <br />
+                <input type="number" name="oibNum" class="k-textbox" id="txtOIB" /><br />
+                <label class="k-label-top" id="lblPDV">
+                    PDV broj:
+                </label>
+                <br />
+                <input type="number" name="pdvNum" class="k-textbox" id="txtPDV" /><br />
+                <label class="k-label-top">
+                    Matični broj tvrtke(MB):
+                </label>
+                <br />
+                <input type="number" name="mbNum" class="k-textbox" id="txtMB" /><br />
+            </section>
+        </div>
+        
+        <div id="contact">
+            <section class="k-panel">
+                
+                <h5>Kontakt</h5>
+                
+                <label class="k-label" id="lblPhone">
+                    Broj telefona:
+                </label>
+                <br />
+                <input type="tel" name="phoneNum" class="k-textbox" id="txtPhone" /><br />
+                <label class="k-label" id="lblMobile">
+                    Broj mobitela:
+                </label>
+                <br />
+                <input type="tel" name="mobileNum" class="k-textbox" id="txtmMobile" /><br />
+                <label class="k-label" id="lblFax">
+                    Broj fax-a:
+                </label>
+                <br />
+                <input type="tel" name="faxNum" class="k-textbox" id="txtFax" /><br />
+            </section>
+            
+            <section class="k-panel">
+                <h6>
+                    Web</h6>
+                <label class="k-label" id="lblWeb">
+                    Web adresa tvrtke:
+                </label>
+                <br />
+                <input type="url" name="webName" class="k-textbox" id="txtWeb" />
+                <input type="submit" name="webGo" value="Posjeti stranicu" class="k-button" />
+            </section>
+            
+            <section class="k-panel">
+                
+                <h6>E-mail</h6>
+
+                <label class="k-label" id="lblEmail1">
+                    E-mail adresa 1:
+                </label>
+                <br />
+                <input type="email" name="emailName1" class="k-textbox" id="txtEmail1" /><br />
+                <label class="k-label" id="lblEmail2">
+                    E-mail adresa 2:
+                </label>
+                <br />
+                <input type="email" name="emailName2" class="k-textbox" id="txtEmail2" /><br />
+                <label class="k-label" id="lblEmail3">
+                    E-mail adresa 3:
+                </label>
+                <br />
+                <input type="email" name="emailName3" class="k-textbox" id="txtEmail3" /><br />
+            </section>
+        </div>
+        
+        <section class="k-panel">
+            
+            <h6>Logo tvrtke</h6>
+            
+            <label class="k-label" id="lblLogo">
+                Učitajte logo Vaše tvrtke:
+            </label>
+            <br />
+            <!-- kendo kontrola za upload slike,
+                -- koristimo javascript funkcije za trenutni upload slike 
+                -- -->
+            <div id="uploadSection">
+                <!-- In async mode the files are uploaded to a controller action,
+                     but without interrupting the user interaction with the page. -->
+                @(Html.Kendo().Upload()
+                              .Name("attachments")
+                              .Async(async => async
+                                                   .Save("UploadImage", "Company") // --action metoda, kontroler 
+                                                   .Remove("DeleteImage", "Company") // --action metoda, kontroler
+                                                   .AutoUpload(true)).Events(events => events
+                                                                                             .Select("onSelect") // --javascript fja
+                                                                                             .Success("onSuccess")) // --javascript fja
+                      )
+            </div>
+            
+            <div id="uploadDispaly">
+                @*              @Html.HiddenFor(img => img.PicId)
+                @Html.HiddenFor(img => img.PicName)
+                @Html.HiddenFor(img => img.PicUrl)
+                @Html.HiddenFor(img => img.Status)
+*@
+                <div id="uploadImg">
+                    
+                </div>
+            </div>
+        </section>
+    
+        <section class="k-panel">
+            
+            <h6>Izaberite korisničko ime i lozinku</h6>
+            
+            <label class="k-label" id="lblUserName">
+                Unesite korisničko ime:
+            </label>
+            <br />
+            <input type="text" name="userName" class="k-textbox" id="txtUserName" /><br />
+            <label class="k-label" id="lblPwd">
+                Unesite lozinku:
+            </label>
+            <br />
+            <input type="password" name="userPwd" class="k-textbox" id="txtPwd" /><br />
+            <label class="k-label" id="lblAgainPwd">
+                Ponovite lozinku:
+            </label>
+            <br />
+            <input type="password" name="userPwd2" class="k-textbox" id="txtAgainPwd" /><br />
+        </section>
+        <section class="k-panel">
+            <br />
+            <input type="submit" value="Registriraj" class="k-button" id="btnConfirm" />
+            <input type="reset" value="Odustani" class="k-button" id="btnCancel" />
+            <input type="reset" value="Poništi" class="k-button" id="btnDiscard" />
+        </section>
+        
+    }
+
+    
+    
+</div>

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace GeoERP.MVC.Areas.Register
+namespace GeoERP.MVC.Areas.Admin
 {
     public class AdminAreaRegistration : AreaRegistration
     {

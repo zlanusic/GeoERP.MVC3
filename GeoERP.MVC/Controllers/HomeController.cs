@@ -17,9 +17,15 @@ namespace GeoERP.MVC.Controllers
         }
 
         // --GET: /Home/
-        public ActionResult About()
+        public PartialViewResult _About()
         {
-            return View();
+            return PartialView();
+        }
+
+        // --GET: /Home/
+        public PartialViewResult _Contact()
+        {
+            return PartialView();
         }
 
     }

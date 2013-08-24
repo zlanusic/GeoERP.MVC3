@@ -119,10 +119,10 @@ namespace GeoERP.MVC.ServiceGeoCloud {
                     string tipApp);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiFirmu", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiFirmuResponse")]
-        string[] DohvatiFirmu(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiFirmu(string authcode, int idFirma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiBanke", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiBankeResponse")]
-        string[] DohvatiBanke(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiBanke(string authcode, int idFirma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DodajBanku", ReplyAction="http://tempuri.org/IServiceGeoCloud/DodajBankuResponse")]
         void DodajBanku(string authcode, int idFirma, string naziv, string iban, string zr);
@@ -134,7 +134,13 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         void ObrisiBanku(string authcode, int idFirma, int idBanka);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiPoslove", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiPosloveResponse")]
-        string[] DohvatiPoslove(string authcode, int idFirme);
+        System.Collections.Generic.List<string> DohvatiPoslove(string authcode, int idFirme);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiDatumePoslova", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiDatumePoslovaResponse")]
+        System.Collections.Generic.List<System.DateTime> DohvatiDatumePoslova(string authcode, int idFirme);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiDodijeljenePoslove", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiDodijeljenePosloveResponse")]
+        System.Collections.Generic.List<string> DohvatiDodijeljenePoslove(string authcode, int idFirme);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NoviPosao", ReplyAction="http://tempuri.org/IServiceGeoCloud/NoviPosaoResponse")]
         void NoviPosao(string authcode, int idFirma, int idUser, int redniBroj, string urBroj, string opis, int statusPosla, int status, int olovka, int idVrstaPosla, int idStranke, System.DateTime datumStart, System.DateTime datumEnd, System.DateTime datumOlovka);
@@ -160,8 +166,11 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiRedniBrojOdPoslaFirma", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiRedniBrojOdPoslaFirmaResponse")]
         int DohvatiZadnjiRedniBrojOdPoslaFirma(string authcode, int idFirme);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/ProvjeriPostojanjePosla", ReplyAction="http://tempuri.org/IServiceGeoCloud/ProvjeriPostojanjePoslaResponse")]
+        bool ProvjeriPostojanjePosla(string authcode, int idFirme, string naziv);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupe", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeResponse")]
-        string[] DohvatiGrupe(string authcode, int idFirme);
+        System.Collections.Generic.List<string> DohvatiGrupe(string authcode, int idFirme);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NovaGrupa", ReplyAction="http://tempuri.org/IServiceGeoCloud/NovaGrupaResponse")]
         void NovaGrupa(string authcode, int idFirme, string naziv, string opis);
@@ -173,7 +182,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         void ObrišiGrupu(string authcode, int idFirme, int idGrupe);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiRadnike", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiRadnikeResponse")]
-        string[] DohvatiRadnike(string authcode, int idFirme);
+        System.Collections.Generic.List<string> DohvatiRadnike(string authcode, int idFirme);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NoviRadnik", ReplyAction="http://tempuri.org/IServiceGeoCloud/NoviRadnikResponse")]
         void NoviRadnik(string authcode, int idFirme, string ime, string prezime, string oib, string mjesto, string adresa, string brMob, string brTel, string eMail1, string eMail2, string korisnickoIme, string lozinka, int idOvlast, string urBroj);
@@ -200,8 +209,23 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/ObrišiRadnika", ReplyAction="http://tempuri.org/IServiceGeoCloud/ObrišiRadnikaResponse")]
         void ObrišiRadnika(string authcode, int idFirme, int idRadnika);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnike", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnikeResponse")]
+        System.Collections.Generic.List<string> DohvatiGrupeRadnike(string authcode, int idFirme);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnikeZaRadnika", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnikeZaRadnikaResponse")]
+        System.Collections.Generic.List<string> DohvatiGrupeRadnikeZaRadnika(string authcode, int idFirme, int idRadnika);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DodajRadnikaUgrupu", ReplyAction="http://tempuri.org/IServiceGeoCloud/DodajRadnikaUgrupuResponse")]
+        void DodajRadnikaUgrupu(string authcode, int idFirme, int idGrupe, int idRadnik);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/ObrišiRadnikaIzGrupe", ReplyAction="http://tempuri.org/IServiceGeoCloud/ObrišiRadnikaIzGrupeResponse")]
+        void ObrišiRadnikaIzGrupe(string authcode, int idFirme, int idGrupaRadnika);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePosla", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePoslaResponse")]
-        string[] DohvatiVrstePosla(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiVrstePosla(string authcode, int idFirma);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePoslaPoNazivu", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePoslaPoNazivuResponse")]
+        System.Collections.Generic.List<string> DohvatiVrstePoslaPoNazivu(string authcode, int idFirma, int idVrstaPosla);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NovaVrstaPosla", ReplyAction="http://tempuri.org/IServiceGeoCloud/NovaVrstaPoslaResponse")]
         void NovaVrstaPosla(string authcode, int idFirma, string naziv, string opis);
@@ -213,7 +237,10 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         void ObrisiVrstaPosla(string authcode, int idFirma, int idVrstaPosla);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiMeta", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiMetaResponse")]
-        string[] DohvatiMeta(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiMeta(string authcode, int idFirma);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiMetaPoIdMeta", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiMetaPoIdMetaResponse")]
+        System.Collections.Generic.List<string> DohvatiMetaPoIdMeta(string authcode, int idFirma, int idMeta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NoviMeta", ReplyAction="http://tempuri.org/IServiceGeoCloud/NoviMetaResponse")]
         void NoviMeta(string authcode, int idFirma, string naziv, int idTipMoguciMeta);
@@ -225,7 +252,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         void ObrisiMeta(string authcode, int idFirma, int idMeta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiTipoveMeta", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiTipoveMetaResponse")]
-        string[] DohvatiTipoveMeta(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiTipoveMeta(string authcode, int idFirma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NoviTipMeta", ReplyAction="http://tempuri.org/IServiceGeoCloud/NoviTipMetaResponse")]
         void NoviTipMeta(string authcode, int idFirma, string naziv, int ovlast);
@@ -237,7 +264,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         void ObrisiTipMeta(string authcode, int idFirma, int idTipMeta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMoguciMeta", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMoguciMetaResponse")]
-        string[] DohvatiVrijednostMoguciMeta(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiVrijednostMoguciMeta(string authcode, int idFirma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NovaVrijednostTipMoguciMeta", ReplyAction="http://tempuri.org/IServiceGeoCloud/NovaVrijednostTipMoguciMetaResponse")]
         void NovaVrijednostTipMoguciMeta(string authcode, int idFirma, int idMm, string vrijednost);
@@ -247,6 +274,9 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostTipMoguciMeta", ReplyAction="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostTipMoguciMetaResponse")]
         void ObrisiVrijednostTipMoguciMeta(string authcode, int idFirma, int idTipMeta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostNoviMoguciMeta", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostNoviMoguciMetaResponse")]
+        System.Collections.Generic.List<string> DohvatiVrijednostNoviMoguciMeta(string authcode, int idFirma, int idMmIzvor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DodijeliMetaVrstiPosla", ReplyAction="http://tempuri.org/IServiceGeoCloud/DodijeliMetaVrstiPoslaResponse")]
         void DodijeliMetaVrstiPosla(string authcode, int idFirme, int idVrstaPosla, int idMeta);
@@ -260,8 +290,11 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostiMetaZaPosao", ReplyAction="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostiMetaZaPosaoResponse")]
         void ObrisiVrijednostiMetaZaPosao(string authcode, int idFirme, int idPosao);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMetaZaPosao", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMetaZaPosaoResponse")]
+        System.Collections.Generic.List<string> DohvatiVrijednostMetaZaPosao(string authcode, int idFirme, int idPosao);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiStranke", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiStrankeResponse")]
-        string[] DohvatiStranke(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiStranke(string authcode, int idFirma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DodajStranku", ReplyAction="http://tempuri.org/IServiceGeoCloud/DodajStrankuResponse")]
         void DodajStranku(
@@ -289,7 +322,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         void ObrisiStranku(string authcode, int idFirme, int idStranke);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiDjelatnosti", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiDjelatnostiResponse")]
-        string[] DohvatiDjelatnosti(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiDjelatnosti(string authcode, int idFirma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NovaDjelatnost", ReplyAction="http://tempuri.org/IServiceGeoCloud/NovaDjelatnostResponse")]
         void NovaDjelatnost(string authcode, int idFirma, string naziv);
@@ -298,7 +331,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         void IzmjenaDjelatnosti(string authcode, int idFirma, int idDjelatnost, string naziv);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiPonude", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiPonudeResponse")]
-        string[] DohvatiPonude(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiPonude(string authcode, int idFirma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NovaPonuda", ReplyAction="http://tempuri.org/IServiceGeoCloud/NovaPonudaResponse")]
         void NovaPonuda(string authcode, int idFirmas, int brPonude, int idBanke, string naziv, int idStranka, int idVrstaPosla, string pdv, string ukupanIznos, string rabatPonude, System.DateTime datum);
@@ -310,7 +343,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         void ObrisiPonudu(string authcode, int idFirma, int idPonuda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiStavke", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiStavkeResponse")]
-        string[] DohvatiStavke(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiStavke(string authcode, int idFirma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NovaStavka", ReplyAction="http://tempuri.org/IServiceGeoCloud/NovaStavkaResponse")]
         void NovaStavka(string authcode, int idFirma, int idPorez, string naziv, string opis, decimal iznosStavke);
@@ -331,7 +364,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         void BrisanjeStavkiRacuna(string authcode, int idFirma, int brRacuna);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiPoreze", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiPorezeResponse")]
-        string[] DohvatiPoreze(string authcode, int idFirma);
+        System.Collections.Generic.List<string> DohvatiPoreze(string authcode, int idFirma);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/NoviPorez", ReplyAction="http://tempuri.org/IServiceGeoCloud/NoviPorezResponse")]
         void NoviPorez(string authcode, int idFirma, long porez);
@@ -341,6 +374,18 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/ObrisiPorez", ReplyAction="http://tempuri.org/IServiceGeoCloud/ObrisiPorezResponse")]
         void ObrisiPorez(string authcode, int idFirma, int idPorez);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DodajRadniDokument", ReplyAction="http://tempuri.org/IServiceGeoCloud/DodajRadniDokumentResponse")]
+        void DodajRadniDokument(string authcode, int idFirma, string path, int idPosao);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/ObrisiRadniDokument", ReplyAction="http://tempuri.org/IServiceGeoCloud/ObrisiRadniDokumentResponse")]
+        void ObrisiRadniDokument(string authcode, int idFirma, int idPath);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/DohvatiRadneDokumentePoIdPoslu", ReplyAction="http://tempuri.org/IServiceGeoCloud/DohvatiRadneDokumentePoIdPosluResponse")]
+        System.Collections.Generic.List<string> DohvatiRadneDokumentePoIdPoslu(string authcode, int idFirma, int idPosao);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceGeoCloud/IzmjenaStatusaRadnogDokumenta", ReplyAction="http://tempuri.org/IServiceGeoCloud/IzmjenaStatusaRadnogDokumentaResponse")]
+        void IzmjenaStatusaRadnogDokumenta(string authcode, int idFirma, string idPath, int status);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -429,11 +474,11 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.IzmjenaPodatakaFirme(authcode, idBanka, naziv, skraceniNaziv, mjesto, adresa, brTel, brMob, brFax, eMail1, eMail2, eMail3, webAddrs, oib, mb, pdvBr, poslovnaBanka, brZr, direktor, iban, logo, korisnickoIme, lozinka, tipApp);
         }
         
-        public string[] DohvatiFirmu(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiFirmu(string authcode, int idFirma) {
             return base.Channel.DohvatiFirmu(authcode, idFirma);
         }
         
-        public string[] DohvatiBanke(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiBanke(string authcode, int idFirma) {
             return base.Channel.DohvatiBanke(authcode, idFirma);
         }
         
@@ -449,8 +494,16 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.ObrisiBanku(authcode, idFirma, idBanka);
         }
         
-        public string[] DohvatiPoslove(string authcode, int idFirme) {
+        public System.Collections.Generic.List<string> DohvatiPoslove(string authcode, int idFirme) {
             return base.Channel.DohvatiPoslove(authcode, idFirme);
+        }
+        
+        public System.Collections.Generic.List<System.DateTime> DohvatiDatumePoslova(string authcode, int idFirme) {
+            return base.Channel.DohvatiDatumePoslova(authcode, idFirme);
+        }
+        
+        public System.Collections.Generic.List<string> DohvatiDodijeljenePoslove(string authcode, int idFirme) {
+            return base.Channel.DohvatiDodijeljenePoslove(authcode, idFirme);
         }
         
         public void NoviPosao(string authcode, int idFirma, int idUser, int redniBroj, string urBroj, string opis, int statusPosla, int status, int olovka, int idVrstaPosla, int idStranke, System.DateTime datumStart, System.DateTime datumEnd, System.DateTime datumOlovka) {
@@ -485,7 +538,11 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             return base.Channel.DohvatiZadnjiRedniBrojOdPoslaFirma(authcode, idFirme);
         }
         
-        public string[] DohvatiGrupe(string authcode, int idFirme) {
+        public bool ProvjeriPostojanjePosla(string authcode, int idFirme, string naziv) {
+            return base.Channel.ProvjeriPostojanjePosla(authcode, idFirme, naziv);
+        }
+        
+        public System.Collections.Generic.List<string> DohvatiGrupe(string authcode, int idFirme) {
             return base.Channel.DohvatiGrupe(authcode, idFirme);
         }
         
@@ -501,7 +558,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.ObrišiGrupu(authcode, idFirme, idGrupe);
         }
         
-        public string[] DohvatiRadnike(string authcode, int idFirme) {
+        public System.Collections.Generic.List<string> DohvatiRadnike(string authcode, int idFirme) {
             return base.Channel.DohvatiRadnike(authcode, idFirme);
         }
         
@@ -533,8 +590,28 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.ObrišiRadnika(authcode, idFirme, idRadnika);
         }
         
-        public string[] DohvatiVrstePosla(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiGrupeRadnike(string authcode, int idFirme) {
+            return base.Channel.DohvatiGrupeRadnike(authcode, idFirme);
+        }
+        
+        public System.Collections.Generic.List<string> DohvatiGrupeRadnikeZaRadnika(string authcode, int idFirme, int idRadnika) {
+            return base.Channel.DohvatiGrupeRadnikeZaRadnika(authcode, idFirme, idRadnika);
+        }
+        
+        public void DodajRadnikaUgrupu(string authcode, int idFirme, int idGrupe, int idRadnik) {
+            base.Channel.DodajRadnikaUgrupu(authcode, idFirme, idGrupe, idRadnik);
+        }
+        
+        public void ObrišiRadnikaIzGrupe(string authcode, int idFirme, int idGrupaRadnika) {
+            base.Channel.ObrišiRadnikaIzGrupe(authcode, idFirme, idGrupaRadnika);
+        }
+        
+        public System.Collections.Generic.List<string> DohvatiVrstePosla(string authcode, int idFirma) {
             return base.Channel.DohvatiVrstePosla(authcode, idFirma);
+        }
+        
+        public System.Collections.Generic.List<string> DohvatiVrstePoslaPoNazivu(string authcode, int idFirma, int idVrstaPosla) {
+            return base.Channel.DohvatiVrstePoslaPoNazivu(authcode, idFirma, idVrstaPosla);
         }
         
         public void NovaVrstaPosla(string authcode, int idFirma, string naziv, string opis) {
@@ -549,8 +626,12 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.ObrisiVrstaPosla(authcode, idFirma, idVrstaPosla);
         }
         
-        public string[] DohvatiMeta(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiMeta(string authcode, int idFirma) {
             return base.Channel.DohvatiMeta(authcode, idFirma);
+        }
+        
+        public System.Collections.Generic.List<string> DohvatiMetaPoIdMeta(string authcode, int idFirma, int idMeta) {
+            return base.Channel.DohvatiMetaPoIdMeta(authcode, idFirma, idMeta);
         }
         
         public void NoviMeta(string authcode, int idFirma, string naziv, int idTipMoguciMeta) {
@@ -565,7 +646,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.ObrisiMeta(authcode, idFirma, idMeta);
         }
         
-        public string[] DohvatiTipoveMeta(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiTipoveMeta(string authcode, int idFirma) {
             return base.Channel.DohvatiTipoveMeta(authcode, idFirma);
         }
         
@@ -581,7 +662,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.ObrisiTipMeta(authcode, idFirma, idTipMeta);
         }
         
-        public string[] DohvatiVrijednostMoguciMeta(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiVrijednostMoguciMeta(string authcode, int idFirma) {
             return base.Channel.DohvatiVrijednostMoguciMeta(authcode, idFirma);
         }
         
@@ -595,6 +676,10 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         
         public void ObrisiVrijednostTipMoguciMeta(string authcode, int idFirma, int idTipMeta) {
             base.Channel.ObrisiVrijednostTipMoguciMeta(authcode, idFirma, idTipMeta);
+        }
+        
+        public System.Collections.Generic.List<string> DohvatiVrijednostNoviMoguciMeta(string authcode, int idFirma, int idMmIzvor) {
+            return base.Channel.DohvatiVrijednostNoviMoguciMeta(authcode, idFirma, idMmIzvor);
         }
         
         public void DodijeliMetaVrstiPosla(string authcode, int idFirme, int idVrstaPosla, int idMeta) {
@@ -613,7 +698,11 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.ObrisiVrijednostiMetaZaPosao(authcode, idFirme, idPosao);
         }
         
-        public string[] DohvatiStranke(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiVrijednostMetaZaPosao(string authcode, int idFirme, int idPosao) {
+            return base.Channel.DohvatiVrijednostMetaZaPosao(authcode, idFirme, idPosao);
+        }
+        
+        public System.Collections.Generic.List<string> DohvatiStranke(string authcode, int idFirma) {
             return base.Channel.DohvatiStranke(authcode, idFirma);
         }
         
@@ -644,7 +733,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.ObrisiStranku(authcode, idFirme, idStranke);
         }
         
-        public string[] DohvatiDjelatnosti(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiDjelatnosti(string authcode, int idFirma) {
             return base.Channel.DohvatiDjelatnosti(authcode, idFirma);
         }
         
@@ -656,7 +745,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.IzmjenaDjelatnosti(authcode, idFirma, idDjelatnost, naziv);
         }
         
-        public string[] DohvatiPonude(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiPonude(string authcode, int idFirma) {
             return base.Channel.DohvatiPonude(authcode, idFirma);
         }
         
@@ -672,7 +761,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.ObrisiPonudu(authcode, idFirma, idPonuda);
         }
         
-        public string[] DohvatiStavke(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiStavke(string authcode, int idFirma) {
             return base.Channel.DohvatiStavke(authcode, idFirma);
         }
         
@@ -700,7 +789,7 @@ namespace GeoERP.MVC.ServiceGeoCloud {
             base.Channel.BrisanjeStavkiRacuna(authcode, idFirma, brRacuna);
         }
         
-        public string[] DohvatiPoreze(string authcode, int idFirma) {
+        public System.Collections.Generic.List<string> DohvatiPoreze(string authcode, int idFirma) {
             return base.Channel.DohvatiPoreze(authcode, idFirma);
         }
         
@@ -714,6 +803,22 @@ namespace GeoERP.MVC.ServiceGeoCloud {
         
         public void ObrisiPorez(string authcode, int idFirma, int idPorez) {
             base.Channel.ObrisiPorez(authcode, idFirma, idPorez);
+        }
+        
+        public void DodajRadniDokument(string authcode, int idFirma, string path, int idPosao) {
+            base.Channel.DodajRadniDokument(authcode, idFirma, path, idPosao);
+        }
+        
+        public void ObrisiRadniDokument(string authcode, int idFirma, int idPath) {
+            base.Channel.ObrisiRadniDokument(authcode, idFirma, idPath);
+        }
+        
+        public System.Collections.Generic.List<string> DohvatiRadneDokumentePoIdPoslu(string authcode, int idFirma, int idPosao) {
+            return base.Channel.DohvatiRadneDokumentePoIdPoslu(authcode, idFirma, idPosao);
+        }
+        
+        public void IzmjenaStatusaRadnogDokumenta(string authcode, int idFirma, string idPath, int status) {
+            base.Channel.IzmjenaStatusaRadnogDokumenta(authcode, idFirma, idPath, status);
         }
     }
 }

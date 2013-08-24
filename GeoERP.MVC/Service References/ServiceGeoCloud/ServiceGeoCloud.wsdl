@@ -179,6 +179,36 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="DohvatiDatumePoslova">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiDatumePoslovaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiDatumePoslovaResult" nillable="true" type="q6:ArrayOfdateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiDodijeljenePoslove">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiDodijeljenePosloveResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiDodijeljenePosloveResult" nillable="true" type="q7:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="NoviPosao">
         <xs:complexType>
           <xs:sequence>
@@ -321,6 +351,22 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="ProvjeriPostojanjePosla">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="naziv" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProvjeriPostojanjePoslaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ProvjeriPostojanjePoslaResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="DohvatiGrupe">
         <xs:complexType>
           <xs:sequence>
@@ -332,7 +378,7 @@
       <xs:element name="DohvatiGrupeResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiGrupeResult" nillable="true" type="q6:ArrayOfstring" />
+            <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiGrupeResult" nillable="true" type="q8:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -392,7 +438,7 @@
       <xs:element name="DohvatiRadnikeResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiRadnikeResult" nillable="true" type="q7:ArrayOfstring" />
+            <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiRadnikeResult" nillable="true" type="q9:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -463,6 +509,66 @@
           <xs:sequence />
         </xs:complexType>
       </xs:element>
+      <xs:element name="DohvatiGrupeRadnike">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiGrupeRadnikeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiGrupeRadnikeResult" nillable="true" type="q10:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiGrupeRadnikeZaRadnika">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idRadnika" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiGrupeRadnikeZaRadnikaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiGrupeRadnikeZaRadnikaResult" nillable="true" type="q11:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodajRadnikaUgrupu">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idGrupe" type="xs:int" />
+            <xs:element minOccurs="0" name="idRadnik" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodajRadnikaUgrupuResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrišiRadnikaIzGrupe">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idGrupaRadnika" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrišiRadnikaIzGrupeResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
       <xs:element name="DohvatiVrstePosla">
         <xs:complexType>
           <xs:sequence>
@@ -474,7 +580,23 @@
       <xs:element name="DohvatiVrstePoslaResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiVrstePoslaResult" nillable="true" type="q8:ArrayOfstring" />
+            <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiVrstePoslaResult" nillable="true" type="q12:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiVrstePoslaPoNazivu">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idVrstaPosla" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiVrstePoslaPoNazivuResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiVrstePoslaPoNazivuResult" nillable="true" type="q13:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -534,7 +656,23 @@
       <xs:element name="DohvatiMetaResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiMetaResult" nillable="true" type="q9:ArrayOfstring" />
+            <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiMetaResult" nillable="true" type="q14:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiMetaPoIdMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idMeta" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiMetaPoIdMetaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiMetaPoIdMetaResult" nillable="true" type="q15:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -594,7 +732,7 @@
       <xs:element name="DohvatiTipoveMetaResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiTipoveMetaResult" nillable="true" type="q10:ArrayOfstring" />
+            <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiTipoveMetaResult" nillable="true" type="q16:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -654,7 +792,7 @@
       <xs:element name="DohvatiVrijednostMoguciMetaResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiVrijednostMoguciMetaResult" nillable="true" type="q11:ArrayOfstring" />
+            <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiVrijednostMoguciMetaResult" nillable="true" type="q17:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -701,6 +839,22 @@
       <xs:element name="ObrisiVrijednostTipMoguciMetaResponse">
         <xs:complexType>
           <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiVrijednostNoviMoguciMeta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idMmIzvor" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiVrijednostNoviMoguciMetaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiVrijednostNoviMoguciMetaResult" nillable="true" type="q18:ArrayOfstring" />
+          </xs:sequence>
         </xs:complexType>
       </xs:element>
       <xs:element name="DodijeliMetaVrstiPosla">
@@ -762,6 +916,22 @@
           <xs:sequence />
         </xs:complexType>
       </xs:element>
+      <xs:element name="DohvatiVrijednostMetaZaPosao">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirme" type="xs:int" />
+            <xs:element minOccurs="0" name="idPosao" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiVrijednostMetaZaPosaoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiVrijednostMetaZaPosaoResult" nillable="true" type="q19:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="DohvatiStranke">
         <xs:complexType>
           <xs:sequence>
@@ -773,7 +943,7 @@
       <xs:element name="DohvatiStrankeResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiStrankeResult" nillable="true" type="q12:ArrayOfstring" />
+            <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiStrankeResult" nillable="true" type="q20:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -832,7 +1002,7 @@
       <xs:element name="DohvatiDjelatnostiResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiDjelatnostiResult" nillable="true" type="q13:ArrayOfstring" />
+            <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiDjelatnostiResult" nillable="true" type="q21:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -876,7 +1046,7 @@
       <xs:element name="DohvatiPonudeResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiPonudeResult" nillable="true" type="q14:ArrayOfstring" />
+            <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiPonudeResult" nillable="true" type="q22:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -950,7 +1120,7 @@
       <xs:element name="DohvatiStavkeResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiStavkeResult" nillable="true" type="q15:ArrayOfstring" />
+            <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiStavkeResult" nillable="true" type="q23:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -1065,7 +1235,7 @@
       <xs:element name="DohvatiPorezeResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiPorezeResult" nillable="true" type="q16:ArrayOfstring" />
+            <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiPorezeResult" nillable="true" type="q24:ArrayOfstring" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -1108,6 +1278,66 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="ObrisiPorezResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodajRadniDokument">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idPosao" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DodajRadniDokumentResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiRadniDokument">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idPath" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObrisiRadniDokumentResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiRadneDokumentePoIdPoslu">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idPosao" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DohvatiRadneDokumentePoIdPosluResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DohvatiRadneDokumentePoIdPosluResult" nillable="true" type="q25:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaStatusaRadnogDokumenta">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="authcode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="idFirma" type="xs:int" />
+            <xs:element minOccurs="0" name="idPath" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="status" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="IzmjenaStatusaRadnogDokumentaResponse">
         <xs:complexType>
           <xs:sequence />
         </xs:complexType>
@@ -1169,6 +1399,12 @@
         </xs:sequence>
       </xs:complexType>
       <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+      <xs:complexType name="ArrayOfdateTime">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfdateTime" nillable="true" type="tns:ArrayOfdateTime" />
     </xs:schema>
   </wsdl:types>
   <wsdl:message name="IServiceGeoCloud_Test_InputMessage">
@@ -1225,6 +1461,18 @@
   <wsdl:message name="IServiceGeoCloud_DohvatiPoslove_OutputMessage">
     <wsdl:part name="parameters" element="tns:DohvatiPosloveResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiDatumePoslova_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiDatumePoslova" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiDatumePoslova_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiDatumePoslovaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiDodijeljenePoslove_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiDodijeljenePoslove" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiDodijeljenePoslove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiDodijeljenePosloveResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_NoviPosao_InputMessage">
     <wsdl:part name="parameters" element="tns:NoviPosao" />
   </wsdl:message>
@@ -1272,6 +1520,12 @@
   </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_DohvatiZadnjiRedniBrojOdPoslaFirma_OutputMessage">
     <wsdl:part name="parameters" element="tns:DohvatiZadnjiRedniBrojOdPoslaFirmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ProvjeriPostojanjePosla_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvjeriPostojanjePosla" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ProvjeriPostojanjePosla_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvjeriPostojanjePoslaResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_DohvatiGrupe_InputMessage">
     <wsdl:part name="parameters" element="tns:DohvatiGrupe" />
@@ -1321,11 +1575,41 @@
   <wsdl:message name="IServiceGeoCloud_ObrišiRadnika_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObrišiRadnikaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiGrupeRadnike_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupeRadnike" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiGrupeRadnike_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupeRadnikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiGrupeRadnikeZaRadnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupeRadnikeZaRadnika" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiGrupeRadnikeZaRadnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiGrupeRadnikeZaRadnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodajRadnikaUgrupu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRadnikaUgrupu" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodajRadnikaUgrupu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRadnikaUgrupuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrišiRadnikaIzGrupe_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrišiRadnikaIzGrupe" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrišiRadnikaIzGrupe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrišiRadnikaIzGrupeResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_DohvatiVrstePosla_InputMessage">
     <wsdl:part name="parameters" element="tns:DohvatiVrstePosla" />
   </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_DohvatiVrstePosla_OutputMessage">
     <wsdl:part name="parameters" element="tns:DohvatiVrstePoslaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrstePoslaPoNazivu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrstePoslaPoNazivu" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrstePoslaPoNazivu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrstePoslaPoNazivuResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_NovaVrstaPosla_InputMessage">
     <wsdl:part name="parameters" element="tns:NovaVrstaPosla" />
@@ -1350,6 +1634,12 @@
   </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_DohvatiMeta_OutputMessage">
     <wsdl:part name="parameters" element="tns:DohvatiMetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiMetaPoIdMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiMetaPoIdMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiMetaPoIdMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiMetaPoIdMetaResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_NoviMeta_InputMessage">
     <wsdl:part name="parameters" element="tns:NoviMeta" />
@@ -1417,6 +1707,12 @@
   <wsdl:message name="IServiceGeoCloud_ObrisiVrijednostTipMoguciMeta_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObrisiVrijednostTipMoguciMetaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrijednostNoviMoguciMeta_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrijednostNoviMoguciMeta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrijednostNoviMoguciMeta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrijednostNoviMoguciMetaResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_DodijeliMetaVrstiPosla_InputMessage">
     <wsdl:part name="parameters" element="tns:DodijeliMetaVrstiPosla" />
   </wsdl:message>
@@ -1440,6 +1736,12 @@
   </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_ObrisiVrijednostiMetaZaPosao_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObrisiVrijednostiMetaZaPosaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrijednostMetaZaPosao_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrijednostMetaZaPosao" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiVrijednostMetaZaPosao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiVrijednostMetaZaPosaoResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceGeoCloud_DohvatiStranke_InputMessage">
     <wsdl:part name="parameters" element="tns:DohvatiStranke" />
@@ -1567,6 +1869,30 @@
   <wsdl:message name="IServiceGeoCloud_ObrisiPorez_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObrisiPorezResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodajRadniDokument_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRadniDokument" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DodajRadniDokument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajRadniDokumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiRadniDokument_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRadniDokument" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_ObrisiRadniDokument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiRadniDokumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiRadneDokumentePoIdPoslu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiRadneDokumentePoIdPoslu" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_DohvatiRadneDokumentePoIdPoslu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DohvatiRadneDokumentePoIdPosluResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaStatusaRadnogDokumenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaStatusaRadnogDokumenta" />
+  </wsdl:message>
+  <wsdl:message name="IServiceGeoCloud_IzmjenaStatusaRadnogDokumenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmjenaStatusaRadnogDokumentaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceGeoCloud">
     <wsdl:operation name="Test">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/Test" message="tns:IServiceGeoCloud_Test_InputMessage" />
@@ -1604,6 +1930,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiPoslove" message="tns:IServiceGeoCloud_DohvatiPoslove_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiPosloveResponse" message="tns:IServiceGeoCloud_DohvatiPoslove_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DohvatiDatumePoslova">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiDatumePoslova" message="tns:IServiceGeoCloud_DohvatiDatumePoslova_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiDatumePoslovaResponse" message="tns:IServiceGeoCloud_DohvatiDatumePoslova_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiDodijeljenePoslove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiDodijeljenePoslove" message="tns:IServiceGeoCloud_DohvatiDodijeljenePoslove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiDodijeljenePosloveResponse" message="tns:IServiceGeoCloud_DohvatiDodijeljenePoslove_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="NoviPosao">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviPosao" message="tns:IServiceGeoCloud_NoviPosao_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviPosaoResponse" message="tns:IServiceGeoCloud_NoviPosao_OutputMessage" />
@@ -1635,6 +1969,10 @@
     <wsdl:operation name="DohvatiZadnjiRedniBrojOdPoslaFirma">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiRedniBrojOdPoslaFirma" message="tns:IServiceGeoCloud_DohvatiZadnjiRedniBrojOdPoslaFirma_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiRedniBrojOdPoslaFirmaResponse" message="tns:IServiceGeoCloud_DohvatiZadnjiRedniBrojOdPoslaFirma_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvjeriPostojanjePosla">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ProvjeriPostojanjePosla" message="tns:IServiceGeoCloud_ProvjeriPostojanjePosla_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ProvjeriPostojanjePoslaResponse" message="tns:IServiceGeoCloud_ProvjeriPostojanjePosla_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DohvatiGrupe">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupe" message="tns:IServiceGeoCloud_DohvatiGrupe_InputMessage" />
@@ -1668,9 +2006,29 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrišiRadnika" message="tns:IServiceGeoCloud_ObrišiRadnika_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrišiRadnikaResponse" message="tns:IServiceGeoCloud_ObrišiRadnika_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupeRadnike">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnike" message="tns:IServiceGeoCloud_DohvatiGrupeRadnike_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnikeResponse" message="tns:IServiceGeoCloud_DohvatiGrupeRadnike_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupeRadnikeZaRadnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnikeZaRadnika" message="tns:IServiceGeoCloud_DohvatiGrupeRadnikeZaRadnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnikeZaRadnikaResponse" message="tns:IServiceGeoCloud_DohvatiGrupeRadnikeZaRadnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajRadnikaUgrupu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodajRadnikaUgrupu" message="tns:IServiceGeoCloud_DodajRadnikaUgrupu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodajRadnikaUgrupuResponse" message="tns:IServiceGeoCloud_DodajRadnikaUgrupu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrišiRadnikaIzGrupe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrišiRadnikaIzGrupe" message="tns:IServiceGeoCloud_ObrišiRadnikaIzGrupe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrišiRadnikaIzGrupeResponse" message="tns:IServiceGeoCloud_ObrišiRadnikaIzGrupe_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DohvatiVrstePosla">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePosla" message="tns:IServiceGeoCloud_DohvatiVrstePosla_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePoslaResponse" message="tns:IServiceGeoCloud_DohvatiVrstePosla_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiVrstePoslaPoNazivu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePoslaPoNazivu" message="tns:IServiceGeoCloud_DohvatiVrstePoslaPoNazivu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePoslaPoNazivuResponse" message="tns:IServiceGeoCloud_DohvatiVrstePoslaPoNazivu_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="NovaVrstaPosla">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NovaVrstaPosla" message="tns:IServiceGeoCloud_NovaVrstaPosla_InputMessage" />
@@ -1687,6 +2045,10 @@
     <wsdl:operation name="DohvatiMeta">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiMeta" message="tns:IServiceGeoCloud_DohvatiMeta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiMetaResponse" message="tns:IServiceGeoCloud_DohvatiMeta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiMetaPoIdMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiMetaPoIdMeta" message="tns:IServiceGeoCloud_DohvatiMetaPoIdMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiMetaPoIdMetaResponse" message="tns:IServiceGeoCloud_DohvatiMetaPoIdMeta_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="NoviMeta">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/NoviMeta" message="tns:IServiceGeoCloud_NoviMeta_InputMessage" />
@@ -1732,6 +2094,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostTipMoguciMeta" message="tns:IServiceGeoCloud_ObrisiVrijednostTipMoguciMeta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostTipMoguciMetaResponse" message="tns:IServiceGeoCloud_ObrisiVrijednostTipMoguciMeta_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DohvatiVrijednostNoviMoguciMeta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostNoviMoguciMeta" message="tns:IServiceGeoCloud_DohvatiVrijednostNoviMoguciMeta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostNoviMoguciMetaResponse" message="tns:IServiceGeoCloud_DohvatiVrijednostNoviMoguciMeta_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DodijeliMetaVrstiPosla">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodijeliMetaVrstiPosla" message="tns:IServiceGeoCloud_DodijeliMetaVrstiPosla_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodijeliMetaVrstiPoslaResponse" message="tns:IServiceGeoCloud_DodijeliMetaVrstiPosla_OutputMessage" />
@@ -1747,6 +2113,10 @@
     <wsdl:operation name="ObrisiVrijednostiMetaZaPosao">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostiMetaZaPosao" message="tns:IServiceGeoCloud_ObrisiVrijednostiMetaZaPosao_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostiMetaZaPosaoResponse" message="tns:IServiceGeoCloud_ObrisiVrijednostiMetaZaPosao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiVrijednostMetaZaPosao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMetaZaPosao" message="tns:IServiceGeoCloud_DohvatiVrijednostMetaZaPosao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMetaZaPosaoResponse" message="tns:IServiceGeoCloud_DohvatiVrijednostMetaZaPosao_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DohvatiStranke">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiStranke" message="tns:IServiceGeoCloud_DohvatiStranke_InputMessage" />
@@ -1832,6 +2202,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiPorez" message="tns:IServiceGeoCloud_ObrisiPorez_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiPorezResponse" message="tns:IServiceGeoCloud_ObrisiPorez_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="DodajRadniDokument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodajRadniDokument" message="tns:IServiceGeoCloud_DodajRadniDokument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DodajRadniDokumentResponse" message="tns:IServiceGeoCloud_DodajRadniDokument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRadniDokument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiRadniDokument" message="tns:IServiceGeoCloud_ObrisiRadniDokument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/ObrisiRadniDokumentResponse" message="tns:IServiceGeoCloud_ObrisiRadniDokument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiRadneDokumentePoIdPoslu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiRadneDokumentePoIdPoslu" message="tns:IServiceGeoCloud_DohvatiRadneDokumentePoIdPoslu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/DohvatiRadneDokumentePoIdPosluResponse" message="tns:IServiceGeoCloud_DohvatiRadneDokumentePoIdPoslu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaStatusaRadnogDokumenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaStatusaRadnogDokumenta" message="tns:IServiceGeoCloud_IzmjenaStatusaRadnogDokumenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceGeoCloud/IzmjenaStatusaRadnogDokumentaResponse" message="tns:IServiceGeoCloud_IzmjenaStatusaRadnogDokumenta_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceGeoCloud" type="tns:IServiceGeoCloud">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1916,6 +2302,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DohvatiDatumePoslova">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiDatumePoslova" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiDodijeljenePoslove">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiDodijeljenePoslove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="NoviPosao">
       <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/NoviPosao" style="document" />
       <wsdl:input>
@@ -1981,6 +2385,15 @@
     </wsdl:operation>
     <wsdl:operation name="DohvatiZadnjiRedniBrojOdPoslaFirma">
       <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiZadnjiRedniBrojOdPoslaFirma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvjeriPostojanjePosla">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ProvjeriPostojanjePosla" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2060,8 +2473,53 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupeRadnike">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiGrupeRadnikeZaRadnika">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiGrupeRadnikeZaRadnika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajRadnikaUgrupu">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DodajRadnikaUgrupu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrišiRadnikaIzGrupe">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrišiRadnikaIzGrupe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DohvatiVrstePosla">
       <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePosla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiVrstePoslaPoNazivu">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrstePoslaPoNazivu" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2098,6 +2556,15 @@
     </wsdl:operation>
     <wsdl:operation name="DohvatiMeta">
       <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiMetaPoIdMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiMetaPoIdMeta" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2204,6 +2671,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="DohvatiVrijednostNoviMoguciMeta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostNoviMoguciMeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DodijeliMetaVrstiPosla">
       <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DodijeliMetaVrstiPosla" style="document" />
       <wsdl:input>
@@ -2233,6 +2709,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObrisiVrijednostiMetaZaPosao">
       <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiVrijednostiMetaZaPosao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiVrijednostMetaZaPosao">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiVrijednostMetaZaPosao" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2422,6 +2907,42 @@
     </wsdl:operation>
     <wsdl:operation name="ObrisiPorez">
       <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiPorez" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajRadniDokument">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DodajRadniDokument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiRadniDokument">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/ObrisiRadniDokument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DohvatiRadneDokumentePoIdPoslu">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/DohvatiRadneDokumentePoIdPoslu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmjenaStatusaRadnogDokumenta">
+      <soap:operation soapAction="http://tempuri.org/IServiceGeoCloud/IzmjenaStatusaRadnogDokumenta" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

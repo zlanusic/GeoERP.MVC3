@@ -18,13 +18,33 @@ namespace GeoERP.MVC.Areas.Register.Controllers
     {
         private readonly ServiceGeoCloudClient _serviceGeoCloudClient;
         
-        private readonly RegisterCompanyViewModel _companyViewModel;
-        private readonly PictureViewModel _pictureViewModel;
-
-        public static string AesDecrypt(string input, string pass)
-        {
-            
-        }
+        /// <summary>
+        /// Enkripcija podataka na klijentu.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        //public static string AesDecrypt(object obj)
+        //{
+        //    RijndaelManaged aes = new RijndaelManaged();
+        //    MD5CryptoServiceProvider hashAes = new MD5CryptoServiceProvider();
+        //    try
+        //    {
+        //        byte[] hash = new byte[32];
+        //        byte[] temp = hashAes.ComputeHash(buffer: System.Text.Encoding.ASCII.GetBytes(pass));
+        //        Array.Copy(temp, 0, hash, 0, 16);
+        //        Array.Copy(temp, 0, hash, 15, 16);
+        //        aes.Key = hash;
+        //        aes.Mode = CipherMode.ECB;
+        //        var desDecrypter = aes.CreateDecryptor();
+        //        byte[] buffer = Convert.FromBase64String(input);
+        //        string decrypted = System.Text.Encoding.ASCII.GetString(desDecrypter.TransformFinalBlock(buffer, 0, buffer.Length));
+        //        return decrypted;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
+        //}
 
         public RegisterController()
         {
@@ -39,64 +59,42 @@ namespace GeoERP.MVC.Areas.Register.Controllers
             return View();
         }
 
-        #region Company
-
         /// <summary>
-        /// Prikaz forme za registarciju tvrtke, 
-        /// gdje korisnik unosi osnovne podatke.
+        /// Potrebno za swapping _registerCompany view(formu).
         /// </summary>
-        /// <returns>AddCompany view</returns>
-        [HttpGet]
-        public ActionResult AddCompany()
+        /// <returns>Parcijalni _registerCompany view.</returns>
+        public PartialViewResult _RegisterCompany()
         {
-            return View(new RegisterCompanyViewModel());
+            return PartialView();
         }
 
         /// <summary>
-        /// Registracija tvrtke kroz WCF servis.
+        /// Registracija korisnika.
         /// </summary>
-        /// <param name="company">View model za tvrtku</param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult AddCompany(RegisterCompanyViewModel company)
+        public ActionResult _RegisterCompany(RegisterModel model)
         {
             
             // --Proxy za WCF service
             _serviceGeoCloudClient.Open();
 
+            //string encrypt = AesDecrypt();
+
             // --Podaci iz kontrola
             //int customerId = Request.Form["CustomerId"];
-            string fullName = Request.Form["FullName"].Trim();
-            string shortName = Request.Form["ShortName"].Trim();
-            string cityName = Request.Form["CityName"].Trim();
-            string addressName = Request.Form["Address"].Trim();
-            string director = Request.Form["Director"].Trim();
-            string oibNumber = Request.Form["Oib"].Trim();
-            string pdvNumber = Request.Form["PdvNum"].Trim();
-            string mbNumber = Request.Form["PersonalNumber"].Trim();
-            string phoneNumber = Request.Form["Phone"].Trim();
-            string mobileNumber = Request.Form["Mobile"].Trim();
-            string faxNumber = Request.Form["Fax"].Trim();
-            string webAddress = Request.Form["WebPath"].Trim();
-            string email1 = Request.Form["Email1"].Trim();
-            string email2 = Request.Form["Email2"].Trim();
-            string email3 = Request.Form["Email3"].Trim();
-            //_pictureViewModel = Request.Form["PictureViewModel"];
-            string userName = Request.Form["UserName"].Trim();
-            string userPwd = Request.Form["UserPwd"].Trim();
 
+            string email1 = Request.Form["email"].Trim();
+            string userName = Request.Form["userName"].Trim();
+            string firstName = Request.Form["firstName"].Trim();
+            string lastName = Request.Form["lastName"].Trim();
+            string userPwd1 = Request.Form["userPwd1"].Trim();
+            string userPwd2 = Request.Form["userPwd2"].Trim();
+
+            
             try
             {
                 // --logika
-                // --Prvi parametar je povratna vrijednost funkcije za enkripciju na klijentu(auth code koji fja vrati).
-                // --Null vrijednosti se odnose na parametre vezani za banku.
-                _serviceGeoCloudClient.UnesiNovuFirmu
-                    (
-                        "enkripcija", fullName, shortName, cityName, addressName
-                        , phoneNumber, mobileNumber, faxNumber, email1, email2, email3, webAddress
-                        , oibNumber, mbNumber, pdvNumber, null, null, director, null, null, userName, userPwd, null
-                    );
-
             }
             catch (NullReferenceException exception)
             {
@@ -106,74 +104,7 @@ namespace GeoERP.MVC.Areas.Register.Controllers
             }
             
             _serviceGeoCloudClient.Close();
-            return View(company);
+            return View();
         }
-
-        #endregion
-
-        
-
-
-        #region UploadImages
-
-        public ActionResult Save(IEnumerable<HttpPostedFileBase> attachments)
-        {
-            try
-            {
-
-                //if(attachments =! null)
-
-                {
-                    foreach (var file in attachments)
-                    {
-                        var fileName = Path.GetFileName(file.FileName);
-                        var destinationPath = Path.Combine(Server.MapPath("~/App_Data"), fileName);
-
-                        file.SaveAs(destinationPath);
-                    }
-
-                }
-                // --vrati prazan string za ukoliko je upload prosao uspjesno
-                return Content("");
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        public ActionResult Remove(string[] fileNames)
-        {
-            try
-            {
-                foreach (var fullName in fileNames)
-                {
-                    var fileName = Path.GetFileName(fullName);
-                    var physicalPath = Path.Combine(Server.MapPath("~/App_Data"), fileName);
-
-                    // --implementirati user premissions
-
-                    if (System.IO.File.Exists(physicalPath))
-                    {
-                        System.IO.File.Delete(physicalPath);
-                    }
-                }
-
-                // --ako je delete bio uspjesan, vrati prazan string
-                return Content("");
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        #endregion
-
-
     }
 }

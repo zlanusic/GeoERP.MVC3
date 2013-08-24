@@ -1,0 +1,11 @@
+﻿<div id="rightMenu" style="float: right">
+    <ul>
+        <!-- Meni je vidljiv samo admin korisnicima -->
+        @if (!User.IsInRole("Admin"))
+        {
+            <li id="profilLink" class="k-button"><a href="/Home/Index">Profil</a></li>
+        }
+        <li id="aboutLink" class="k-button"><a href="/Home/Index">O nama</a></li>
+        <li id="contactLink" class="k-button"><a href="/Home/Index">Kontakt</a></li>
+    </ul>
+</div>

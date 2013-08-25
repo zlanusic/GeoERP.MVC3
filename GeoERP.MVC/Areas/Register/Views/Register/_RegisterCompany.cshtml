@@ -1,0 +1,38 @@
+﻿<h3>Registracija</h3>
+
+@using (Html.BeginForm("_RegisterCompany", "Register", FormMethod.Post))
+{
+    <label id="lblEmail" class="k-label">E-mail adresa:</label>
+    <br />
+    <input type="email" name="email" class="k-textbox" id="txtEmail" />
+    <br />
+    
+    <label class="k-label" id="lblUserName">Korisničko ime:</label>
+    <br />
+    <input type="text" name="userName" class="k-textbox" id="txtUserName" />
+    <br />
+    
+    <label id="lblFirstName" class="k-label">Ime:</label>
+    <br/>
+    <input id="txtFirstName" name="firstName" class="k-textbox"/>
+    <br/>
+    <label id="lblLastName">Prezime:</label>
+    <br/>
+    <input id="txtLastName" name="lastName" class="k-textbox"/>
+    <br/>
+    
+    <label class="k-label" id="lblPwd">Lozinka:</label>
+    <br />
+    <input type="password" name="userPwd1" class="k-textbox" id="txtPwd" />
+    <br />
+    <label class="k-label" id="lblAgainPwd">Ponovite lozinku:</label>
+    <br />
+    <input type="password" name="userPwd2" class="k-textbox" id="txtAgainPwd" /><br />
+    <br />
+    
+    <input type="submit" value="Registriraj" class="k-button" id="btnRegister" />
+    <input type="reset" value="Poništi" class="k-button" id="btnDiscard" />
+}
+<p>
+    <a href="#" class="loginLink">Prijavite se</a>, ukoliko ste postojeći korisnik.
+</p>

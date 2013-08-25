@@ -2,17 +2,12 @@
     ViewBag.Title = "Početna";
 }
 
-<h2>@ViewBag.Message</h2>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+@section swapping
+{
+    <section id="mainPage">
+        <div id="swapWrapper"></div>
+    </section>
+}
 
-<p>
-    To learn more about working with Kendo UI Complete for ASP.NET MVC, you can visit the following resources:
-</p>
-<ul>
-        <li><a href="http://demos.kendoui.com/">online demos</a></li>
-        <li><a href="http://docs.kendoui.com/getting-started/using-kendo-with/aspnet-mvc/introduction">online documentation</a></li>
-        <li><a href="http://www.kendoui.com/forums.aspx">community forums</a></li>
-        <li><a href="http://tv.telerik.com/search?FilterByTags=KendoUI">videos on Telerik TV</a></li>
-</ul>
+<div id="swapPanel"></div>
+

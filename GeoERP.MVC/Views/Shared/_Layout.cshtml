@@ -1,42 +1,56 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>@ViewBag.Title</title>
+    <title>@ViewBag.Title</title>
+
 	<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
 	<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.common.min.css")" rel="stylesheet" type="text/css" />
 	<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
 	<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.default.min.css")" rel="stylesheet" type="text/css" />
 	<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/jquery.min.js")"></script>
-	<script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.all.min.js")"></script>
-	<script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.aspnetmvc.min.js")"></script>
-	<script type="text/javascript" src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    
+    
 </head>
 
 <body>
-	<div class="page">
-		<header>
-			<div id="title">
-				<h1>GeoERP WEB Edition</h1>
-			</div>
+    <div class="page">
+        <header>
+            <a href="/Admin/Admin/AdminCompany" class="k-button">Pogledaj Admin dio.</a>
+            <div id="title">
+                @Html.Partial("_LoginPartial")
+                @Html.Partial("_RightMenuPartial")
+                
+                <h1>GeoERP LOGO</h1>
+            
+            </div>
+            
+            
+        </header>
+	    
+        <section id="main">
+            <div id="mainWrapper">
+                @RenderSection("swapping", required: false)
+            </div>
+            @RenderBody()
+        </section>
+	    
+        <footer>
+            <p>&copy; <b>@DateTime.Now.Year - </b><a href="http://www.geosoft.hr" class="k-link">Geosoft d.o.o.</a></p>
+        </footer>
+	
+    </div>
+    
+    <!-- KendoUI Scripts -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.all.min.js")"></script>
+	<script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.aspnetmvc.min.js")"></script>
+	<script type="text/javascript" src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/App/Views/Shared/layout.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/App/Views/Admin/adminCompany.js")"></script>
+       
 
-			@(Html.Kendo().Menu()
-					.Name("MainMenu")
-					.Items(menu => {
-						menu.Add().Text("Početna").Action("Index", "Home");
-						menu.Add().Text("O nama").Action("About", "Home");
-                        menu.Add().Text("Registracija").Action("AddCompany", "Register");
-					    menu.Add().Text("Prijava");
-					}))
-		</header>
-	    <section id="main">
-	        @{
-	            Html.RenderPartial("Menu");
-	        }
-	        @RenderBody()
-	    </section>
-		<footer>
-		</footer>
-	</div>
 </body>
+
 </html>

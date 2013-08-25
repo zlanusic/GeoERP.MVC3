@@ -3,23 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using GeoERP.MVC.Areas.Register.Models;
-using GeoERP.MVC.ServiceGeoCloud;
+
+using GeoERP.MVC.Areas.Admin.Models;
 
 namespace GeoERP.MVC.Areas.Admin.Controllers
 {
+    /// <summary>
+    /// Pristup Admin kontroleru imaju samo admin korisnici.
+    /// </summary>
+    //[Authorize (Roles = "Admin")]
     public class AdminController : Controller
     {
-        private readonly ServiceGeoCloudClient _serviceGeoCloudClient;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public AdminController()
-        {
-            _serviceGeoCloudClient = new ServiceGeoCloudClient();
-        }
-
         //
         // GET: /Admin/Admin/
 
@@ -28,60 +22,36 @@ namespace GeoERP.MVC.Areas.Admin.Controllers
             return View();
         }
 
-
-        #region Bank
-
         /// <summary>
-        /// Prikaz svih banaka u dropdownlist kendoUI kontroli.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public ActionResult GetBank(int? id)
-        {
-            // --Proxy za WCF service
-            _serviceGeoCloudClient.Open();
-
-            // --test
-            ViewBag.Banke = new string[]
-            {
-                "a", "b", "c"
-            };
-
-            // --logika
-
-            _serviceGeoCloudClient.Close();
-
-            return View();
-        }
-
-        /// <summary>
-        /// Prikaz forme za dodavanje banke.
+        /// Prikaz glavnog meni-a i svih podataka o tvrtki(samo ako je korisnik admin rola).
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult AddBank()
+        public ActionResult AdminCompany()
         {
             return View();
         }
 
         /// <summary>
-        /// Dodavanje nove banke kroz WCF servis.
+        /// Dohvat forme sa podacima za izmjenu profila korisnika.
         /// </summary>
-        /// <param name="bank"></param>
         /// <returns></returns>
-        [HttpPost]
-        public ActionResult AddBank(BankViewModel bank)
+        [HttpGet]
+        public PartialViewResult _EditProfil()
         {
-            // --Proxy za WCF service
-            _serviceGeoCloudClient.Open();
-
-            //logika
-
-            _serviceGeoCloudClient.Close();
-            return View();
+            return PartialView();
         }
 
-        #endregion
+        /// <summary>
+        /// Edit podataka na profilu korisnika.
+        /// </summary>
+        /// <param name="model">POCO klasa.</param>
+        /// <returns>Vraca Json objekt.</returns>
+        [HttpPost]
+        public ActionResult _EditProfil(ProfilModel model)
+        {
+            return View();
+        }
 
     }
 }

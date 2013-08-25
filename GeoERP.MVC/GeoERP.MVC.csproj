@@ -66,15 +66,17 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Models\ProfilModel.cs" />
+    <Compile Include="Areas\Auth\AuthAreaRegistration.cs" />
+    <Compile Include="Areas\Auth\Controllers\AuthController.cs" />
+    <Compile Include="Areas\Auth\Models\LoginModel.cs" />
+    <Compile Include="Areas\Register\Models\RegisterModel.cs" />
     <Compile Include="Areas\Register\RegisterAreaRegistration.cs" />
     <Compile Include="Areas\Register\Controllers\RegisterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Admin\Models\BankViewModel.cs" />
-    <Compile Include="Areas\Register\Models\RegisterCompanyViewModel.cs" />
-    <Compile Include="Areas\Admin\Models\PictureViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Core\IRepository.cs" />
     <Compile Include="Repositories\Core\RepositoryBase.cs" />
@@ -253,6 +255,13 @@
     <Content Include="Content\kendo\2013.2.716\Uniform\sprite.png" />
     <Content Include="Content\kendo\2013.2.716\Uniform\sprite_2x.png" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\App\Views\Admin\adminCompany.js" />
+    <Content Include="Scripts\App\Views\Admin\editProfil.js" />
+    <Content Include="Scripts\App\Views\Home\index.js" />
+    <Content Include="Scripts\App\Views\Shared\layout.js" />
+    <Content Include="Scripts\jquery-2.0.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\kendo.modernizr.custom.js" />
     <Content Include="Scripts\kendo\2013.2.716\jquery.min.js" />
     <Content Include="Scripts\kendo\2013.2.716\kendo.all-vsdoc.js" />
@@ -352,14 +361,17 @@
     <Content Include="Scripts\kendo\2013.2.716\kendo.web.min.js" />
     <Content Include="Scripts\kendo\2013.2.716\kendo.window.min.js" />
     <Content Include="Areas\Register\Views\Web.config" />
-    <Content Include="Areas\Register\Views\Register\AddCompany.cshtml" />
-    <Content Include="Areas\Admin\Views\AddBank.cshtml" />
-    <Content Include="Areas\Register\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Register\Views\Register\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\GetBank.cshtml" />
+    <Content Include="Areas\Register\Views\Register\_RegisterCompany.cshtml" />
+    <Content Include="Areas\Auth\Views\Web.config" />
+    <Content Include="Areas\Auth\Views\Auth\_Login.cshtml" />
     <Content Include="Areas\Admin\Views\Web.config" />
-    <Content Include="Areas\Register\Views\Shared\Menu.cshtml" />
-    <Content Include="Areas\Admin\Views\EditCompany.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AdminCompany.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\_EditProfil.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Register\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Auth\Views\_ViewStart.cshtml" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-2.0.3.min.map" />
     <None Include="Service References\ServiceGeoCloud\configuration91.svcinfo" />
     <None Include="Service References\ServiceGeoCloud\configuration.svcinfo" />
     <None Include="Service References\ServiceGeoCloud\Reference.svcmap">
@@ -393,15 +405,21 @@
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\Menu.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_RightMenuPartial.cshtml" />
+    <Content Include="Views\Home\_Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Auth\Views\Shared\" />
+    <Folder Include="Areas\Register\Views\Shared\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\App\Views\Auth\" />
+    <Folder Include="Scripts\App\Views\Register\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\_About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />

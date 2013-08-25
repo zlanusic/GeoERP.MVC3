@@ -1,0 +1,5 @@
+C:\developRepos\GeoERP.MVC3\GeoERP.Repository.Interface\bin\Debug\GeoERP.Repository.Interface.dll.config
+C:\developRepos\GeoERP.MVC3\GeoERP.Repository.Interface\bin\Debug\GeoERP.Repository.Interface.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.Repository.Interface\bin\Debug\GeoERP.Repository.Interface.pdb
+C:\developRepos\GeoERP.MVC3\GeoERP.Repository.Interface\obj\Debug\GeoERP.Repository.Interface.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.Repository.Interface\obj\Debug\GeoERP.Repository.Interface.pdb

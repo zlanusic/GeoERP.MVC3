@@ -1,0 +1,44 @@
+﻿<!-- Kendo UI Styles -->
+<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "GeoERP - Login: ";
+}
+
+<h2>Admin area - pregled tvrtke</h2>
+
+<div id="admin-menu">
+    <!-- Menu se prikazuje samo na Index.cshtml stranici i samo ako je korisnik prijavljen(Admin rola) -->
+    <ul id="main-menu">
+        <!-- Ako je korisnik Admin!! -->
+        @if (!User.IsInRole("Admin"))
+        {
+            <li>Poslovi
+                <ul>
+                    <li><a href="/Admin/Admin/GetFullCompany">Pregled</a></li>
+                    <li><a href="/Admin/Admin/GetCompany">Moj profil</a></li>
+                </ul>
+            </li>
+            <li>Stranke</li>
+            <li>Radnici</li>  
+            <li>Ponude</li>
+            <li>Računi</li>
+            <li>Pomoć</li>
+        }
+    </ul>
+    <!-- Filter sa Kendo UI Datepicker widget-om -->
+    <div id="datepicker-menu"></div>
+
+</div>
+
+<!-- Kendo UI Scripts -->
+<script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/jquery.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.all.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.aspnetmvc.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+
+<!-- Custom scripts -->
+<script type="text/javascript" src="@Url.Content("~/Scripts/App/Views/Areas/Admin/getFullCompany.js")"></script>

@@ -1,0 +1,199 @@
+﻿@{
+    ViewBag.Title = "Uredi tvrtku";
+}
+
+<section>
+    
+    <h2 style="color: mediumpurple">Uredi tvrtku</h2>
+
+    <div id="editCompany" class="k-panel">
+    
+    @using (Html.BeginForm("AddCompany", "Register", FormMethod.Post))
+    {
+        <section id="basicInfo">
+                
+            <label id="lblFullName" class="k-label">Puni naziv tvrtke:</label><br />
+            <input id="txtFullName" type="text" name="fullName" class="k-input" /><br />
+                
+            <label id="lblShortName" class="k-label">Skraceni naziv tvrtke:</label><br />
+            <input id="txtShortName" type="text" name="shortName" class="k-input" /><br />
+                
+            <!-- Markup -->
+            <label id="lblPlace" class="k-label">Sjedište tvrtke:</label><br />
+            <input id="txtCity" type="text" name="cityName" class="k-input" data-role="autocomplete" /><br />
+                
+            <!-- Deklarativna inicijalizacija kendoUI widget-a -->
+            <script type="text/javascript">
+
+                $(document).ready(function () {
+                    kendo.init($("#txtCity"));
+                });
+
+            </script>
+                
+            <label id="lblAddress" class="k-label">Adresa:</label><br />
+            <input id="txtAddress" type="text" name="addressName" class="k-textbox" /><br />
+            
+        </section>
+        
+           
+             
+    
+        <section id="companyInfo">
+            
+                <h5>Informacije</h5>
+                
+                <label id="lblDirector" class="k-label">Direktor:</label><br />
+                <input id="txtDirector" type="text" name="directorName" class="k-input" /><br />
+                <label id="lblbank" class="k-label">Izaberite banku:</label><br />
+                @*                @Html.Kendo().DropDownList()
+                          .Name("ddlBank")
+*@
+               
+                <input type="submit" name="newBank" value="Dodaj novu banku" class="k-button" /><br />
+                <label class="k-label-top" id="lblOIB">
+                    OIB tvrtke:
+                </label>
+                <br />
+                <input type="text" name="oibNum" class="k-textbox" id="txtOIB" /><br />
+                <label class="k-label-top" id="lblPDV">
+                    PDV broj:
+                </label>
+                <br />
+                <input type="text" name="pdvNum" class="k-textbox" id="txtPDV" /><br />
+                <label class="k-label-top">
+                    Matični broj tvrtke(MB):
+                </label>
+                <br />
+                <input type="text" name="mbNum" class="k-textbox" id="txtMB" /><br />
+            
+        </section>
+        
+        <div id="contact">
+            
+            <section>
+                
+                <h5>Kontakt</h5>
+                
+                <label class="k-label" id="lblPhone">Broj telefona:</label>
+                <br />
+                <input type="tel" name="phoneNum" class="k-textbox" id="txtPhone" />
+                <br />
+                
+                <label class="k-label" id="lblMobile">Broj mobitela:</label>
+                <br />
+                <input type="tel" name="mobileNum" class="k-textbox" id="txtmMobile" /><br />
+                
+                <label class="k-label" id="lblFax">Broj fax-a:</label>
+                <br />
+                <input type="tel" name="faxNum" class="k-textbox" id="txtFax" /><br />
+
+            </section>
+            
+            <section>
+                
+                <h6>Web</h6>
+
+                <label class="k-label" id="lblWeb">Web adresa tvrtke:</label>
+                <br />
+                <input type="url" name="webName" class="k-textbox" id="txtWeb" />
+                <input type="submit" name="webGo" value="Posjeti stranicu" class="k-button" />
+
+            </section>
+            
+            <section>
+                
+                <div id="email">
+                    
+                    <h6>E-mail</h6>
+
+                    <label class="k-label" id="lblEmail1">E-mail adresa 1:</label>
+                    <br />
+                    <input type="email" name="emailName1" class="k-textbox" id="txtEmail1" />
+                    <br />
+                
+                    <label class="k-label" id="lblEmail2">E-mail adresa 2:</label>
+                    <br />
+                    <input type="email" name="emailName2" class="k-textbox" id="txtEmail2" />
+                    <br />
+                
+                    <label class="k-label" id="lblEmail3">E-mail adresa 3:</label>
+                    <br />
+                    <input type="email" name="emailName3" class="k-textbox" id="txtEmail3" />
+                    <br />
+
+                </div>
+                
+
+            </section>
+
+        </div>
+        
+        <section>
+            
+            <h6>Logo tvrtke</h6>
+            
+            <label class="k-label" id="lblLogo">Učitajte logo Vaše tvrtke:</label>
+            <br />
+
+            <!-- kendo kontrola za upload slike,
+                -- koristimo javascript funkcije za trenutni upload slike 
+                -- -->
+            <div id="uploadSection">
+                <!-- In async mode the files are uploaded to a controller action,
+                    but without interrupting the user interaction with the page. -->
+                @(Html.Kendo().Upload()
+                      .Name("attachments")
+                      .Async(async => async
+                          .Save("UploadImage", "Company") // --action metoda, kontroler 
+                          .Remove("DeleteImage", "Company") // --action metoda, kontroler
+                          .AutoUpload(true)).Events(events => events
+                              .Select("onSelect") // --javascript fja
+                              .Success("onSuccess")) // --javascript fja
+                      )
+            </div>
+            
+            <div id="uploadDispaly">
+                @*              @Html.HiddenFor(img => img.PicId)
+                @Html.HiddenFor(img => img.PicName)
+                @Html.HiddenFor(img => img.PicUrl)
+                @Html.HiddenFor(img => img.Status)
+*@
+                <div id="uploadImg">
+                    
+                </div>
+            </div>
+        </section>
+    
+        <section class="k-panel">
+            
+            <h6>Izaberite korisničko ime i lozinku</h6>
+            
+            <label class="k-label" id="lblUserName">
+                Unesite korisničko ime:
+            </label>
+            <br />
+            <input type="text" name="userName" class="k-textbox" id="txtUserName" /><br />
+            <label class="k-label" id="lblPwd">
+                Unesite lozinku:
+            </label>
+            <br />
+            <input type="password" name="userPwd" class="k-textbox" id="txtPwd" /><br />
+            <label class="k-label" id="lblAgainPwd">
+                Ponovite lozinku:
+            </label>
+            <br />
+            <input type="password" name="userPwd2" class="k-textbox" id="txtAgainPwd" /><br />
+        </section>
+        <section class="k-panel">
+            <br />
+            <input type="submit" value="Registriraj" class="k-button" id="btnConfirm" />
+            <input type="reset" value="Odustani" class="k-button" id="btnCancel" />
+            <input type="reset" value="Poništi" class="k-button" id="btnDiscard" />
+        </section>
+        
+        }
+    
+    </div>
+
+</section>

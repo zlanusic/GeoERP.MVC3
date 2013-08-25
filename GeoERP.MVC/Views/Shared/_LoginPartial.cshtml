@@ -1,0 +1,35 @@
+﻿<script type="text/javascript" src="~/Scripts/App/Views/Auth/logoff.js"></script>
+<script type="text/javascript" src="~/Scripts/App/Views/Auth/logon.js"></script>
+
+<div id="login-button">
+    @if (Request.IsAuthenticated && ViewData["Odjava"] == null)
+    {
+        <text><b>&nbsp;&nbsp;&nbsp;@Context.User.Identity.Name</b>&nbsp;[<a href='javascript:signout();'>Odjava</a>]</text>
+          
+    }
+    else
+    {
+        @:[<a href="javascript:showLogonDialog();">Prijava</a>]
+
+        <script type="text/javascript">
+
+            function showLogonDialog() {
+                
+                if ($("#dlgLogin").length == 0) {
+
+                    // --Ajax load
+                    $("#divLogon").load("@Url.Action("OpenLogin", "Auth")");
+                } 
+                else 
+                {
+                    // --Clear username & password fields
+                    $("#username, #password").val('');
+
+                    // --Reopen the login dialog which was previously rendered
+                    $("#dlgLogin").dialog("open");
+                }
+            }
+        </script>
+        <div id="divLogon"></div>
+    }
+</div>

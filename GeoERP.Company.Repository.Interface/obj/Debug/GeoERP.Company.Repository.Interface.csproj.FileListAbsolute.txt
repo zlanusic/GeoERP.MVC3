@@ -1,0 +1,9 @@
+C:\developRepos\GeoERP.MVC3\GeoERP.Company.Repository.Interface\bin\Debug\GeoERP.Company.Repository.Interface.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.Company.Repository.Interface\bin\Debug\GeoERP.Company.Repository.Interface.pdb
+C:\developRepos\GeoERP.MVC3\GeoERP.Company.Repository.Interface\bin\Debug\GeoERP.MVC.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.Company.Repository.Interface\bin\Debug\GeoERP.Repository.Interface.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.Company.Repository.Interface\bin\Debug\GeoERP.MVC.pdb
+C:\developRepos\GeoERP.MVC3\GeoERP.Company.Repository.Interface\bin\Debug\GeoERP.Repository.Interface.pdb
+C:\developRepos\GeoERP.MVC3\GeoERP.Company.Repository.Interface\obj\Debug\GeoERP.Company.Repository.Interface.csprojResolveAssemblyReference.cache
+C:\developRepos\GeoERP.MVC3\GeoERP.Company.Repository.Interface\obj\Debug\GeoERP.Company.Repository.Interface.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.Company.Repository.Interface\obj\Debug\GeoERP.Company.Repository.Interface.pdb

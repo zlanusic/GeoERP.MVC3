@@ -5,3 +5,10 @@ C:\dev\GeoERP.MVC\GeoERP.MVCTests\bin\Debug\GeoERP.MVC.pdb
 C:\dev\GeoERP.MVC\GeoERP.MVCTests\obj\Debug\GeoERP.MVCTests.csprojResolveAssemblyReference.cache
 C:\dev\GeoERP.MVC\GeoERP.MVCTests\obj\Debug\GeoERP.MVCTests.dll
 C:\dev\GeoERP.MVC\GeoERP.MVCTests\obj\Debug\GeoERP.MVCTests.pdb
+C:\developRepos\GeoERP.MVC3\GeoERP.MVCTests\bin\Debug\GeoERP.MVCTests.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.MVCTests\bin\Debug\GeoERP.MVCTests.pdb
+C:\developRepos\GeoERP.MVC3\GeoERP.MVCTests\bin\Debug\GeoERP.MVC.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.MVCTests\bin\Debug\GeoERP.MVC.pdb
+C:\developRepos\GeoERP.MVC3\GeoERP.MVCTests\obj\Debug\GeoERP.MVCTests.csprojResolveAssemblyReference.cache
+C:\developRepos\GeoERP.MVC3\GeoERP.MVCTests\obj\Debug\GeoERP.MVCTests.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.MVCTests\obj\Debug\GeoERP.MVCTests.pdb

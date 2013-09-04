@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Registracija";
+}
+
+<h3>Registracija</h3>
+
+<label id="lblEmail" class="k-label">E-mail adresa:</label>
+<br />
+<input type="email" name="email" class="k-textbox" id="txtEmail" />
+<br />
+    
+    <label class="k-label" id="lblUserName">Korisničko ime:</label>
+<br />
+<input type="text" name="userName" class="k-textbox" id="txtUserName" />
+<br />
+
+<label id="lblFirstName" class="k-label">Ime:</label>
+<br/>
+<input id="txtFirstName" name="firstName" class="k-textbox"/>
+<br/>
+<label id="lblLastName">Prezime:</label>
+<br/>
+<input id="txtLastName" name="lastName" class="k-textbox"/>
+<br/>
+    
+<label id="lblPwd" class="k-label">Lozinka:</label>
+<br />
+<input id="txtPwd" type="password" name="userPwd1" class="k-textbox" />
+<br />
+<label id="lblAgainPwd" class="k-label">Ponovite lozinku:</label>
+<br />
+<input id="txtAgainPwd" type="password" name="userPwd2" class="k-textbox" /><br />
+<br />
+    
+<input id="btnRegister" type="button" value="Registriraj" class="k-button" />
+<input id="btnDiscard" type="reset" value="Poništi" class="k-button" />
+
+<p>
+    <a class="loginLink" href="/Auth/Auth/Login">Prijavite se</a>, ukoliko ste postojeći korisnik.
+</p>

@@ -1,0 +1,109 @@
+﻿<span class="status" style="color: green"></span><br/>
+<a href="/Admin/Admin/Company">Pregled</a> i administracija svih aktivnosti tvrtke.<br/>
+
+<h2>Izmjenite profil Vaše tvrtke</h2><br/>
+
+<div id="registerDetails" class="input-container">
+    <label for="txtFullName" class="k-label">Puni naziv</label>
+    <input id="txtFullName" type="text" name="txtFullName" title="Unesite puni naziv tvrtke" class="k-textbox" />
+    <br/><br/>
+    
+    <label for="txtShortName" class="k-label">Skraceni naziv</label>
+    <input id="txtShortName" type="text" name="txtShortName" title="Unesite skraćeni naziv tvrtke" class="k-textbox" />
+    <br/><br/>
+    
+    <label for="txtTown" class="k-label">Mjesto</label>
+    <input id="txtTown" type="text" name="txtTown" title="Unesite sjedište tvrtke" class="k-textbox" />
+    <br/><br/>
+    
+    <label for="txtAddress" class="k-label">Adresa</label>
+    <input id="txtAddress" type="text" name="txtAddress" title="Unesite adresu tvrtke" class="k-textbox" />
+    <br/><br/>
+    
+    <!-- ----------------------------------------------------------------- -->
+    <label for="txtOwner" class="k-label">Vlasnik</label>
+    <input id="txtOwner" type="text" name="txtOwner" title="Vlasnik tvrtke" class="k-textbox" />
+    <br/><br/>
+    
+    <label for="ddlBank" class="k-label">Banka</label>
+    <select id="ddlBank" name="ddlBank" placeholder="Izaberi banku"></select>
+    <input id="btnAddBank" type="button" value="Dodaj banku" class="k-button"/>
+    <br/><br/>
+        
+    <!-- Kendo UI window -->
+    <div id="addBank"></div>
+    
+    <label for="txtOib" class="k-label-top">OIB</label>
+    <input id="txtOib" type="text"name="txtOib" title="Unesite OIB tvrtke" class="k-textbox"/>
+    <br/><br/>
+    
+    <label for="txtPdv" class="k-label-top">PDV</label>
+    <input id="txtPdv" type="text" name="txtPdv" title="Unesite PDV" class="k-textbox"/>
+    <br/><br/>
+    
+    <label for="txtMb" class="k-label-top">MB</label>
+    <input id="txtMb" type="text" name="txtMb" title="Unesite matični broj tvrtke" class="k-textbox"/>
+    <br/><br/>
+    
+    <!-- ------------------------------------------------------------ -->
+    <label for="txtPhone" class="k-label">Tel</label>
+    <input id="txtPhone" type="text" name="txtPhone" title="Unesite broj telefona" class="k-textbox"/>
+    <br/><br/>
+    
+    <label for="txtMobile" class="k-label">Mob</label>
+    <input id="txtMobile" type="text" name="txtMobile" title="Unesite broj mobitela" class="k-textbox"/>
+    <br/><br/> 
+    
+    <label for="txtFax" class="k-label">Fax</label>
+    <input id="txtFax" type="text" name="txtFax" title="Unesite broj fax-a" class="k-textbox"/>
+    <br/><br/>
+    
+    <label for="txtUrl" class="k-label">Web</label>
+    <input id="txtUrl" type="text" name="txtUrl" title="Unesite web adresu tvrtke" class="k-textbox"/>
+    <input id="btnUrl" type="button" value=" Idi " class="k-button"/>
+    <br/><br/>
+    
+    <!-- ------------------------------------------------------------------ -->
+    <label for="txtEmail1" class="k-label">E-mail 1</label>
+    <input id="txtEmail1" type="text" name="txtEmail1" title="Unesite e-mail" class="k-textbox" />
+    <br/><br/>
+    
+    <label for="txtEmail2" class="k-label">E-mail 2</label>
+    <input id="txtEmail2" type="text" name="txtEmail2" title="Unesite e-mail" class="k-textbox" />
+    <br/><br/>
+    
+    <label for="txtEmail3" class="k-label">E-mail 3</label>
+    <input id="txtEmail3" type="text" name="txtEmail3" title="Unesite e-mail" class="k-textbox" />
+    <br/><br/>
+    
+    <!-- ----------------------------------------------------------------- -->
+    <label for="uploadWrapper"><b>Logo</b></label>
+    <div id="uploadWrapper"></div>
+    
+    
+    <!-- ----------------------------------------------------------------- -->
+    <label for="txtUserName" class="k-label">Korisničko ime</label>
+    <input id="txtUserName" type="text" name="txtUserName" title="Unesite korisničko ime" class="k-textbox" />
+    <br /><br/>
+    
+    <label for="txtPwd" class="k-label">Lozinka</label>
+    <input id="txtPwd" type="password" name="txtPwd" title="Unesite lozinku" class="k-textbox" />
+    <br /><br/>
+        
+    
+    <!-- --------------------------------------------------------------- -->
+    <p>
+        <input id="btnUpdate" type="button" value="Izmjeni" class="k-button" />
+        <input id="btnDiscard" type="reset" value="Poništi" class="k-button" />
+    </p>
+    <a href="/Admin/Admin/Company">Pregled</a> i administracija svih aktivnosti tvrtke.<br/>
+    <!-- Ako je update bio uspjesan, ispisi tekst o uspjesnosti  -->
+    <span class="status" style="color: green"></span>
+</div> 
+
+ 
+<!-- Custom Scripts -->
+@section adminScripts
+{
+    <script src="@Url.Content("~/Scripts/App/Views/Admin/profile.js")" type="text/javascript"></script>   
+}

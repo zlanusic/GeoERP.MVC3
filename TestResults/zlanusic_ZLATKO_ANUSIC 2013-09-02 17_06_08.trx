@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="293f53a1-73d5-4f41-bd84-a69765ef23f5" name="zlanusic@ZLATKO_ANUSIC 2013-09-02 17:06:08" runUser="zlatko_anusic\zlanusic" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="1ad11293-43a6-40a8-88bd-366a189ce256">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="zlanusic_ZLATKO_ANUSIC 2013-09-02 17_06_08">
+      <DeploymentItem filename="C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\GeoERP.MVC.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-09-02T17:06:08.5358903+02:00" queuing="2013-09-02T17:06:10.2449881+02:00" start="2013-09-02T17:06:10.3149921+02:00" finish="2013-09-02T17:06:10.8630235+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\developrepos\geoerp.mvc3\geoerp.mvctests\bin\debug\geoerp.mvctests.dll" id="32a04244-e1d8-23de-c639-3f81dbfabc10">
+      <Execution id="2184688a-85cc-4b47-9c3f-287f822db4df" />
+      <TestMethod codeBase="C:/developRepos/GeoERP.MVC3/GeoERP.MVCTests/bin/Debug/GeoERP.MVCTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="GeoERP.MVCTests.UnitTest1, GeoERP.MVCTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="32a04244-e1d8-23de-c639-3f81dbfabc10" executionId="2184688a-85cc-4b47-9c3f-287f822db4df" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="2184688a-85cc-4b47-9c3f-287f822db4df" testId="32a04244-e1d8-23de-c639-3f81dbfabc10" testName="TestMethod1" computerName="ZLATKO_ANUSIC" duration="00:00:00.0110922" startTime="2013-09-02T17:06:10.4349990+02:00" endTime="2013-09-02T17:06:10.8070202+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2184688a-85cc-4b47-9c3f-287f822db4df">
+    </UnitTestResult>
+  </Results>
+</TestRun>

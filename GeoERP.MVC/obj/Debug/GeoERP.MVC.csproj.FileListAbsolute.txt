@@ -21,7 +21,9 @@ C:\dev\GeoERP.MVC\GeoERP.MVC\obj\Debug\GeoERP.MVC.pdb
 C:\dev\GeoERP.MVC\GeoERP.MVC\obj\Debug\GeoERP.MVC.csprojResolveAssemblyReference.cache
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\GeoERP.MVC.dll
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\GeoERP.MVC.pdb
+C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\EntityFramework.dll
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\Kendo.Mvc.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\EntityFramework.xml
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\Kendo.Mvc.xml
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\bg-BG\Kendo.Mvc.resources.dll
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\da-DK\Kendo.Mvc.resources.dll
@@ -37,5 +39,6 @@ C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\ru-RU\Kendo.Mvc.resources.dll
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\sv-SE\Kendo.Mvc.resources.dll
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\uk-UA\Kendo.Mvc.resources.dll
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\bin\zh-CN\Kendo.Mvc.resources.dll
+C:\developRepos\GeoERP.MVC3\GeoERP.MVC\obj\Debug\GeoERP.MVC.csprojResolveAssemblyReference.cache
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\obj\Debug\GeoERP.MVC.dll
 C:\developRepos\GeoERP.MVC3\GeoERP.MVC\obj\Debug\GeoERP.MVC.pdb

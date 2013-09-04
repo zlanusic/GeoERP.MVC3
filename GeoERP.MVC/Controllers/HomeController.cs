@@ -11,21 +11,21 @@ namespace GeoERP.MVC.Controllers
         // --GET: /Home/
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
+            //ViewBag.Message = "Welcome to ASP.NET MVC!";
 
             return View();
         }
 
-        // --GET: /Home/
-        public PartialViewResult _About()
+        // --GET: /About/
+        public ActionResult About()
         {
-            return PartialView();
+            return View();
         }
 
-        // --GET: /Home/
-        public PartialViewResult _Contact()
+        // --GET: /Contact/
+        public ActionResult Contact()
         {
-            return PartialView();
+            return View();
         }
 
     }

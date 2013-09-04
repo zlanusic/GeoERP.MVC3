@@ -55,13 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Controllers\Admin\UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GeoERP.MVC\GeoERP.MVC.csproj">
       <Project>{82ABCA7C-B174-4E9C-B423-C7D2E1943139}</Project>
       <Name>GeoERP.MVC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Auth\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

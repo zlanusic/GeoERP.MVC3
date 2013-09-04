@@ -20,24 +20,29 @@ namespace GeoERP.MVC
             filters.Add(new HandleErrorAttribute());
         }
 
+        /// <summary>
+        /// Definira routing koji mapira url na odgovarajucu action metodu.
+        /// </summary>
+        /// <param name="routes"></param>
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             // -- Custom route - Home page
-            routes.MapRoute("home", "", new {controller = "Home", action = "Index"});
+            //routes.MapRoute("home", "", new {controller = "Home", action = "Index"});
 
-            // --Default routes
+            // --Default route
             routes.MapRoute(
                 "Default", // Route name
-                "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                "{controller}/{action}/{id}", // URL routing pattern with parameters
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter route defaults
             );
 
         }
 
         /// <summary>
-        /// Ovdje zapocinje aplikacija.
+        /// Ovdje zapocinje nasa aplikacija.
+        /// App start event.
         /// </summary>
         protected void Application_Start()
         {
@@ -45,6 +50,8 @@ namespace GeoERP.MVC
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
+
+            // --kolekcija ruta koje su definirane unutar aplikacije
             RegisterRoutes(RouteTable.Routes);
         }
     }

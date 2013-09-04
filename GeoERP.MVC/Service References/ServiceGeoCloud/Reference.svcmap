@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2f5f0acd-96a0-47e7-b5d6-2bae0304fdc5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cce10fc7-7a2b-40be-b24d-db07b8f2f209" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -23,7 +23,7 @@
     <MetadataSource Address="http://74.208.45.202:8084/test/ServiceGeoCloud.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceGeoCloud.wsdl" MetadataType="Wsdl" ID="77713e0d-6d4e-4353-a198-78a3da2cce48" SourceId="1" SourceUrl="http://74.208.45.202:8084/test/ServiceGeoCloud.svc?singleWsdl" />
+    <MetadataFile FileName="ServiceGeoCloud.wsdl" MetadataType="Wsdl" ID="25bf760e-2fb0-4567-87dd-564692a73312" SourceId="1" SourceUrl="http://74.208.45.202:8084/test/ServiceGeoCloud.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

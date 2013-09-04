@@ -1,36 +1,49 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <title>@ViewBag.Title</title>
+    <head>
+        <meta charset="utf-8"/>
+        <title>@ViewBag.Title</title>
 
-	<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.common.min.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.default.min.css")" rel="stylesheet" type="text/css" />
-	<link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
-    
-    
-</head>
+        <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/kendo/2013.2.716/kendo.dataviz.default.min.css")" rel="stylesheet" type="text/css" />
+    </head>
 
 <body>
     <div class="page">
         <header>
-            
             <!-- samo za test -->
-            <a href="/Admin/Admin/AdminCompany" class="k-button">Pogledaj Admin dio.</a>
+            @*<a href="/admin/admin/company" class="k-button">Pogledaj Admin dio.</a>*@
             
             <div id="title">
-                @Html.Partial("_LoginPartial")
-                @Html.Partial("_RightMenuPartial")
-                
                 <h1>GeoERP LOGO</h1>
             </div>
+            <div id="logindisplay">
+                @if (!Request.IsAuthenticated)
+                {
+                    <text><span>Dobodošao <strong>@User.Identity.Name</strong>!</span>
+                    [ <a href="/Auth/Auth/LogOff">Odjava</a> ]</text>
+                }
+                [ <a href="/Auth/Auth/Register">Registracija</a> ]
+                [ <a href="/Auth/Auth/Login">Prijava</a> ]
+            </div>
+            <nav>
+                <ul id="menu">
+                    <!-- Menu je vidljiv samo admin korisnicima -->
+                    @if (!User.IsInRole("Admin"))
+                    {
+                        <li class="k-button"><a class="profileLink" href="/Admin/Admin/Profile">Profil</a></li>
+                    }
+                    <!-- Uvijek vidljivi linkovi, kroz cijelu aplikaciju -->
+                    <li class="k-button"><a class="aboutLink" href="/Home/About">O nama</a></li>
+                    <li class="k-button"><a class="contactLink" href="/Home/Contact">Kontakt</a></li>
+                </ul>
+            </nav>
         </header>
 	    
         <section id="main">
-            <div id="mainWrapper">
-                @RenderSection("swapping", required: false)
-            </div>
             @RenderBody()
         </section>
 	    
@@ -39,16 +52,18 @@
         </footer>
 	
     </div>
-    
+
     <!-- KendoUI Scripts -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/jquery.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.all.min.js")"></script>
-	<script type="text/javascript" src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.aspnetmvc.min.js")"></script>
-	<script type="text/javascript" src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2013.2.716/jquery.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.all.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/kendo/2013.2.716/kendo.aspnetmvc.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")" type="text/javascript"></script>
     
-    <!-- Custom Scripts -->
-    <script type="text/javascript" src="@Url.Content("~/Scripts/App/Views/Shared/layout.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/App/Views/Admin/adminCompany.js")"></script>
+    <!-- Custom Section Scripts -->
+@*    <script src="@Url.Content("~/Scripts/App/Views/Shared/layout.js")" type="text/javascript"></script>*@
+
+    <!-- Renderira skripte koje su u section elementu, ali radi samo sa full view.cshtm(ne radi za _partialView.cshtml) -->
+    @RenderSection("adminScripts", required: false)
        
 
 </body>

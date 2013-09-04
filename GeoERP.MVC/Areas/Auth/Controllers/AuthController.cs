@@ -21,9 +21,10 @@ namespace GeoERP.MVC.Areas.Auth.Controllers
         /// Potrebno za swapping _login view(formu)
         /// </summary>
         /// <returns>Parcijalni view _Login</returns>
-        public PartialViewResult _Login()
+        [HttpGet]
+        public ActionResult Login()
         {
-            return PartialView();
+            return View();
         }
 
         /// <summary>
@@ -31,9 +32,22 @@ namespace GeoERP.MVC.Areas.Auth.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult _Login(LoginModel model)
+        public JsonResult Login(LoginModel model)
         {
-            RedirectToAction("AdminCompany", "Admin");
+            //RedirectToAction("AdminCompany", "Admin");
+            //return View();
+
+            return null;
+        }
+
+        public ActionResult LogOff()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Register()
+        {
             return View();
         }
 

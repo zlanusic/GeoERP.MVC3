@@ -13,6 +13,29 @@ body
     color: #696969;
 }
 
+a:link {
+    color: #034af3;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #505abc;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #12eb87;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
 header,
 footer,
 nav,
@@ -98,14 +121,15 @@ header h1, #header h1
     border: none;
     line-height: 2em;
     font-size: 32px !important;
+    text-shadow: 1px 1px 2px #111;
 }
 
-#main
-{
-    background: #fff;
+#main {
     padding: 30px 30px 15px 30px;
-    margin-bottom: 30px;
-    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+    background-color: #fff;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
 }
 
 footer, #footer
@@ -161,16 +185,26 @@ textarea
     min-height: 75px;
 }
 
-input[type="text"] 
-{
+input[type="text"], 
+input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
     width: 200px;
-    border: 1px solid #CCC;
 }
 
-input[type="password"] 
-{
-    width: 200px;
-    border: 1px solid #CCC;
+select {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+}
+
+input[type="submit"]
+input[type="reset"] {
+    font-size: 1.2em;
+    padding: 5px;
 }
 
 /* TABLE
